@@ -1,0 +1,948 @@
+{
+	"info": {
+		"_postman_id": "327a4f5b-8017-46a2-a570-595e6223fff5",
+		"name": "TinoCRM - Springboot - Local",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
+		"_exporter_id": "4381878"
+	},
+	"item": [
+		{
+			"name": "Usuarios",
+			"item": [
+				{
+					"name": "GET - Usuarios",
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJyb2xlIjoiQURNSU5JU1RSQVRPUiIsInBlcm1pc3Npb25zIjpbeyJhdXRob3JpdHkiOiJTQVZFX09ORV9VU0VSIn0seyJhdXRob3JpdHkiOiJNT0RJRllfT05FX1VTRVIifSx7ImF1dGhvcml0eSI6IkRFTEVURV9PTkVfVVNFUiJ9LHsiYXV0aG9yaXR5IjoiUkVBRF9BTExfVVNFUlMifSx7ImF1dGhvcml0eSI6IlJPTEVfQURNSU5JU1RSQVRPUiJ9XSwibmFtZSI6IkFkbWluaXN0cmFkb3IiLCJzdWIiOiJhZG1pbiIsImlhdCI6MTY5NjU3MzcxMSwiZXhwIjoxNjk2NTc1NTExfQ.br-WfxUY654q23x1vOCXJ6gW5ibD1Qqkoq6QVa_Z6J0",
+									"type": "string"
+								}
+							]
+						},
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "http://localhost:4004/api/users",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "4004",
+							"path": [
+								"api",
+								"users"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "GET - Usuario",
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJyb2xlIjoiQURNSU5JU1RSQVRPUiIsInBlcm1pc3Npb25zIjpbeyJhdXRob3JpdHkiOiJTQVZFX09ORV9VU0VSIn0seyJhdXRob3JpdHkiOiJNT0RJRllfT05FX1VTRVIifSx7ImF1dGhvcml0eSI6IkRFTEVURV9PTkVfVVNFUiJ9LHsiYXV0aG9yaXR5IjoiUkVBRF9BTExfVVNFUlMifSx7ImF1dGhvcml0eSI6IlJPTEVfQURNSU5JU1RSQVRPUiJ9XSwibmFtZSI6IkFkbWluaXN0cmFkb3IiLCJzdWIiOiJhZG1pbiIsImlhdCI6MTY5NjU3MzcxMSwiZXhwIjoxNjk2NTc1NTExfQ.br-WfxUY654q23x1vOCXJ6gW5ibD1Qqkoq6QVa_Z6J0",
+									"type": "string"
+								}
+							]
+						},
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "http://localhost:4004/api/users/3",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "4004",
+							"path": [
+								"api",
+								"users",
+								"3"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "POST- Login - USER",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"username\": \"treyna\",\r\n    \"password\": \"u$uari0CRM\"\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://localhost:4004/auth/authenticate",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "4004",
+							"path": [
+								"auth",
+								"authenticate"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "POST- Login - ADMINISTRATOR",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"username\": \"admin\",\r\n    \"password\": \"Tr20010878\"\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://localhost:4004/auth/authenticate",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "4004",
+							"path": [
+								"auth",
+								"authenticate"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "POST - Agregar Usuario",
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJyb2xlIjoiQURNSU5JU1RSQVRPUiIsInBlcm1pc3Npb25zIjpbeyJhdXRob3JpdHkiOiJTQVZFX09ORV9VU0VSIn0seyJhdXRob3JpdHkiOiJNT0RJRllfT05FX1VTRVIifSx7ImF1dGhvcml0eSI6IkRFTEVURV9PTkVfVVNFUiJ9LHsiYXV0aG9yaXR5IjoiUkVBRF9BTExfVVNFUlMifSx7ImF1dGhvcml0eSI6IlJPTEVfQURNSU5JU1RSQVRPUiJ9XSwibmFtZSI6IkFkbWluaXN0cmFkb3IiLCJzdWIiOiJhZG1pbiIsImlhdCI6MTY5NjQ4NjkyNiwiZXhwIjoxNjk2NDg4NzI2fQ.5wKwRFuNxsjX5ZI6_5rrfhMjQEttDQoOnx-5nNXNfO0",
+									"type": "string"
+								}
+							]
+						},
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"name\": \"Usuario\",\r\n    \"lastName\": \"Dos\",\r\n    \"username\": \"udos\",\r\n    \"password\": \"clave123\",\r\n    \"email\": \"udos@mail.com\"\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://localhost:4004/api/users",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "4004",
+							"path": [
+								"api",
+								"users"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "DELETE - Borrar Usuario",
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJyb2xlIjoiQURNSU5JU1RSQVRPUiIsInBlcm1pc3Npb25zIjpbeyJhdXRob3JpdHkiOiJTQVZFX09ORV9VU0VSIn0seyJhdXRob3JpdHkiOiJNT0RJRllfT05FX1VTRVIifSx7ImF1dGhvcml0eSI6IkRFTEVURV9PTkVfVVNFUiJ9LHsiYXV0aG9yaXR5IjoiUkVBRF9BTExfVVNFUlMifSx7ImF1dGhvcml0eSI6IlJPTEVfQURNSU5JU1RSQVRPUiJ9XSwibmFtZSI6IkFkbWluaXN0cmFkb3IiLCJzdWIiOiJhZG1pbiIsImlhdCI6MTY5NjM1MTU2NCwiZXhwIjoxNjk2MzUzMzY0fQ.USBtL__l46wV163kRPKVyV6J6Jq2obMOZKligMfA-9E",
+									"type": "string"
+								}
+							]
+						},
+						"method": "DELETE",
+						"header": [],
+						"url": {
+							"raw": "http://localhost:4004/api/users/3",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "4004",
+							"path": [
+								"api",
+								"users",
+								"3"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "PUT - Modificar Usuario",
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJyb2xlIjoiQURNSU5JU1RSQVRPUiIsInBlcm1pc3Npb25zIjpbeyJhdXRob3JpdHkiOiJTQVZFX09ORV9VU0VSIn0seyJhdXRob3JpdHkiOiJNT0RJRllfT05FX1VTRVIifSx7ImF1dGhvcml0eSI6IkRFTEVURV9PTkVfVVNFUiJ9LHsiYXV0aG9yaXR5IjoiUkVBRF9BTExfVVNFUlMifSx7ImF1dGhvcml0eSI6IlJPTEVfQURNSU5JU1RSQVRPUiJ9XSwibmFtZSI6IkFkbWluaXN0cmFkb3IiLCJzdWIiOiJhZG1pbiIsImlhdCI6MTY5NjM1MzE3MCwiZXhwIjoxNjk2MzU0OTcwfQ.l9bmG4sWOq5Y9VZzk85QZwo6A7Zcm7bUG71Z2XgB34c",
+									"type": "string"
+								}
+							]
+						},
+						"method": "PUT",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"name\": \"Pepe\",\r\n    \"lastName\": \"Trueno\",\r\n    \"username\": \"ptrueno\",\r\n    \"password\": \"clave456\",\r\n    \"email\": \"ptrueno@mail.com\"\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://localhost:4004/api/users/3",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "4004",
+							"path": [
+								"api",
+								"users",
+								"3"
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		},
+		{
+			"name": "Productos",
+			"item": [
+				{
+					"name": "GET - Productos",
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJyb2xlIjoiVVNFUiIsInBlcm1pc3Npb25zIjpbeyJhdXRob3JpdHkiOiJSRUFEX0FMTF9VU0VSUyJ9LHsiYXV0aG9yaXR5IjoiUk9MRV9VU0VSIn1dLCJuYW1lIjoiVGlubyIsInN1YiI6InRyZXluYSIsImlhdCI6MTY5NjYwODU2NiwiZXhwIjoxNjk2NjEwMzY2fQ.YhSIq8dEpmurDmpIFIIpCtFKhQ01RjhqrWpTZupEVu8",
+									"type": "string"
+								}
+							]
+						},
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "http://localhost:4004/api/productos",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "4004",
+							"path": [
+								"api",
+								"productos"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "GET - Producto",
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJyb2xlIjoiQURNSU5JU1RSQVRPUiIsInBlcm1pc3Npb25zIjpbeyJhdXRob3JpdHkiOiJTQVZFX09ORV9VU0VSIn0seyJhdXRob3JpdHkiOiJNT0RJRllfT05FX1VTRVIifSx7ImF1dGhvcml0eSI6IkRFTEVURV9PTkVfVVNFUiJ9LHsiYXV0aG9yaXR5IjoiUkVBRF9BTExfVVNFUlMifSx7ImF1dGhvcml0eSI6IlJPTEVfQURNSU5JU1RSQVRPUiJ9XSwibmFtZSI6IkFkbWluaXN0cmFkb3IiLCJzdWIiOiJhZG1pbiIsImlhdCI6MTY5NjU3MzcxMSwiZXhwIjoxNjk2NTc1NTExfQ.br-WfxUY654q23x1vOCXJ6gW5ibD1Qqkoq6QVa_Z6J0",
+									"type": "string"
+								}
+							]
+						},
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "http://localhost:4004/api/productos/1",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "4004",
+							"path": [
+								"api",
+								"productos",
+								"1"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "DELETE - Borrar Producto",
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJyb2xlIjoiQURNSU5JU1RSQVRPUiIsInBlcm1pc3Npb25zIjpbeyJhdXRob3JpdHkiOiJTQVZFX09ORV9VU0VSIn0seyJhdXRob3JpdHkiOiJNT0RJRllfT05FX1VTRVIifSx7ImF1dGhvcml0eSI6IkRFTEVURV9PTkVfVVNFUiJ9LHsiYXV0aG9yaXR5IjoiUkVBRF9BTExfVVNFUlMifSx7ImF1dGhvcml0eSI6IlJPTEVfQURNSU5JU1RSQVRPUiJ9XSwibmFtZSI6IkFkbWluaXN0cmFkb3IiLCJzdWIiOiJhZG1pbiIsImlhdCI6MTY5NjU3MzYxMCwiZXhwIjoxNjk2NTc1NDEwfQ.BA9gUL59o171jEqrN3cjwD1X2xXOsrVqNLXV8lmMfQ8",
+									"type": "string"
+								}
+							]
+						},
+						"method": "DELETE",
+						"header": [],
+						"url": {
+							"raw": "http://localhost:4004/api/productos/8",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "4004",
+							"path": [
+								"api",
+								"productos",
+								"8"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "POST - Agregar Producto",
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJyb2xlIjoiQURNSU5JU1RSQVRPUiIsInBlcm1pc3Npb25zIjpbeyJhdXRob3JpdHkiOiJTQVZFX09ORV9VU0VSIn0seyJhdXRob3JpdHkiOiJNT0RJRllfT05FX1VTRVIifSx7ImF1dGhvcml0eSI6IkRFTEVURV9PTkVfVVNFUiJ9LHsiYXV0aG9yaXR5IjoiUkVBRF9BTExfVVNFUlMifSx7ImF1dGhvcml0eSI6IlJPTEVfQURNSU5JU1RSQVRPUiJ9XSwibmFtZSI6IkFkbWluaXN0cmFkb3IiLCJzdWIiOiJhZG1pbiIsImlhdCI6MTY5NjU3MzcxMSwiZXhwIjoxNjk2NTc1NTExfQ.br-WfxUY654q23x1vOCXJ6gW5ibD1Qqkoq6QVa_Z6J0",
+									"type": "string"
+								}
+							]
+						},
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"nombreProducto\": \"Jaguar F-Pace P250 2023\",\r\n    \"descProducto\": \"Jaguar F-Pace P250 2023\",\r\n    \"precioProducto\": 125000.0\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://localhost:4004/api/productos",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "4004",
+							"path": [
+								"api",
+								"productos"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "PUT - Modificar Producto",
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJyb2xlIjoiQURNSU5JU1RSQVRPUiIsInBlcm1pc3Npb25zIjpbeyJhdXRob3JpdHkiOiJTQVZFX09ORV9VU0VSIn0seyJhdXRob3JpdHkiOiJNT0RJRllfT05FX1VTRVIifSx7ImF1dGhvcml0eSI6IkRFTEVURV9PTkVfVVNFUiJ9LHsiYXV0aG9yaXR5IjoiUkVBRF9BTExfVVNFUlMifSx7ImF1dGhvcml0eSI6IlJPTEVfQURNSU5JU1RSQVRPUiJ9XSwibmFtZSI6IkFkbWluaXN0cmFkb3IiLCJzdWIiOiJhZG1pbiIsImlhdCI6MTY5NjU3MzcxMSwiZXhwIjoxNjk2NTc1NTExfQ.br-WfxUY654q23x1vOCXJ6gW5ibD1Qqkoq6QVa_Z6J0",
+									"type": "string"
+								}
+							]
+						},
+						"method": "PUT",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"nombreProducto\": \"Nissan Sentra 2021\",\r\n    \"descProducto\": \"Nissan Sentra 2021\",\r\n    \"precioProducto\": 12000.0\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://localhost:4004/api/productos/1",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "4004",
+							"path": [
+								"api",
+								"productos",
+								"1"
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		},
+		{
+			"name": "Facturas",
+			"item": [
+				{
+					"name": "GET - Facturas",
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJyb2xlIjoiVVNFUiIsInBlcm1pc3Npb25zIjpbeyJhdXRob3JpdHkiOiJSRUFEX0FMTF9VU0VSUyJ9LHsiYXV0aG9yaXR5IjoiUk9MRV9VU0VSIn1dLCJuYW1lIjoiVGlubyIsInN1YiI6InRyZXluYSIsImlhdCI6MTY5NjYxMTE3NSwiZXhwIjoxNjk2NjEyOTc1fQ.1BfytpwjJmAP3ob0EKQyXbbpx8SlM4X4cHicqzsYFlM",
+									"type": "string"
+								}
+							]
+						},
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "http://localhost:4004/api/facturas",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "4004",
+							"path": [
+								"api",
+								"facturas"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "GET - Factura",
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJyb2xlIjoiQURNSU5JU1RSQVRPUiIsInBlcm1pc3Npb25zIjpbeyJhdXRob3JpdHkiOiJTQVZFX09ORV9VU0VSIn0seyJhdXRob3JpdHkiOiJNT0RJRllfT05FX1VTRVIifSx7ImF1dGhvcml0eSI6IkRFTEVURV9PTkVfVVNFUiJ9LHsiYXV0aG9yaXR5IjoiUkVBRF9BTExfVVNFUlMifSx7ImF1dGhvcml0eSI6IlJPTEVfQURNSU5JU1RSQVRPUiJ9XSwibmFtZSI6IkFkbWluaXN0cmFkb3IiLCJzdWIiOiJhZG1pbiIsImlhdCI6MTY5NjU3MzcxMSwiZXhwIjoxNjk2NTc1NTExfQ.br-WfxUY654q23x1vOCXJ6gW5ibD1Qqkoq6QVa_Z6J0",
+									"type": "string"
+								}
+							]
+						},
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "http://localhost:4004/api/factura/1",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "4004",
+							"path": [
+								"api",
+								"factura",
+								"1"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "DELETE - Borrar Factura",
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJyb2xlIjoiQURNSU5JU1RSQVRPUiIsInBlcm1pc3Npb25zIjpbeyJhdXRob3JpdHkiOiJTQVZFX09ORV9VU0VSIn0seyJhdXRob3JpdHkiOiJNT0RJRllfT05FX1VTRVIifSx7ImF1dGhvcml0eSI6IkRFTEVURV9PTkVfVVNFUiJ9LHsiYXV0aG9yaXR5IjoiUkVBRF9BTExfVVNFUlMifSx7ImF1dGhvcml0eSI6IlJPTEVfQURNSU5JU1RSQVRPUiJ9XSwibmFtZSI6IkFkbWluaXN0cmFkb3IiLCJzdWIiOiJhZG1pbiIsImlhdCI6MTY5NjU3MzcxMSwiZXhwIjoxNjk2NTc1NTExfQ.br-WfxUY654q23x1vOCXJ6gW5ibD1Qqkoq6QVa_Z6J0",
+									"type": "string"
+								}
+							]
+						},
+						"method": "DELETE",
+						"header": [],
+						"url": {
+							"raw": "http://localhost:4004/api/facturas/3",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "4004",
+							"path": [
+								"api",
+								"facturas",
+								"3"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "POST - Agregar Factura",
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJyb2xlIjoiQURNSU5JU1RSQVRPUiIsInBlcm1pc3Npb25zIjpbeyJhdXRob3JpdHkiOiJTQVZFX09ORV9VU0VSIn0seyJhdXRob3JpdHkiOiJNT0RJRllfT05FX1VTRVIifSx7ImF1dGhvcml0eSI6IkRFTEVURV9PTkVfVVNFUiJ9LHsiYXV0aG9yaXR5IjoiUkVBRF9BTExfVVNFUlMifSx7ImF1dGhvcml0eSI6IlJPTEVfQURNSU5JU1RSQVRPUiJ9XSwibmFtZSI6IkFkbWluaXN0cmFkb3IiLCJzdWIiOiJhZG1pbiIsImlhdCI6MTY5NjU3MzcxMSwiZXhwIjoxNjk2NTc1NTExfQ.br-WfxUY654q23x1vOCXJ6gW5ibD1Qqkoq6QVa_Z6J0",
+									"type": "string"
+								}
+							]
+						},
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"codFactura\": \"INV0000000004\",\r\n    \"formaPago\": \"OTRO\",\r\n    \"fechaPago\": \"2023-10-05 05:00\",\r\n    \"productoId\": 4\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://localhost:4004/api/facturas",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "4004",
+							"path": [
+								"api",
+								"facturas"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "PUT - Modificar Factura",
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJyb2xlIjoiQURNSU5JU1RSQVRPUiIsInBlcm1pc3Npb25zIjpbeyJhdXRob3JpdHkiOiJTQVZFX09ORV9VU0VSIn0seyJhdXRob3JpdHkiOiJNT0RJRllfT05FX1VTRVIifSx7ImF1dGhvcml0eSI6IkRFTEVURV9PTkVfVVNFUiJ9LHsiYXV0aG9yaXR5IjoiUkVBRF9BTExfVVNFUlMifSx7ImF1dGhvcml0eSI6IlJPTEVfQURNSU5JU1RSQVRPUiJ9XSwibmFtZSI6IkFkbWluaXN0cmFkb3IiLCJzdWIiOiJhZG1pbiIsImlhdCI6MTY5NjU3MzcxMSwiZXhwIjoxNjk2NTc1NTExfQ.br-WfxUY654q23x1vOCXJ6gW5ibD1Qqkoq6QVa_Z6J0",
+									"type": "string"
+								}
+							]
+						},
+						"method": "PUT",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"codFactura\": \"INV0000000001\",\r\n    \"formaPago\": \"OTRO\",\r\n    \"fechaPago\": \"2023-10-05 05:00\",\r\n    \"productoId\": 4\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://localhost:4004/api/facturas/1",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "4004",
+							"path": [
+								"api",
+								"facturas",
+								"1"
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		},
+		{
+			"name": "Ventas",
+			"item": [
+				{
+					"name": "GET - Ventas",
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJyb2xlIjoiVVNFUiIsInBlcm1pc3Npb25zIjpbeyJhdXRob3JpdHkiOiJSRUFEX0FMTF9VU0VSUyJ9LHsiYXV0aG9yaXR5IjoiUk9MRV9VU0VSIn1dLCJuYW1lIjoiVGlubyIsInN1YiI6InRyZXluYSIsImlhdCI6MTY5NjYxMTE3NSwiZXhwIjoxNjk2NjEyOTc1fQ.1BfytpwjJmAP3ob0EKQyXbbpx8SlM4X4cHicqzsYFlM",
+									"type": "string"
+								}
+							]
+						},
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "http://localhost:4004/api/ventas",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "4004",
+							"path": [
+								"api",
+								"ventas"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "GET - Venta",
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJyb2xlIjoiQURNSU5JU1RSQVRPUiIsInBlcm1pc3Npb25zIjpbeyJhdXRob3JpdHkiOiJTQVZFX09ORV9VU0VSIn0seyJhdXRob3JpdHkiOiJNT0RJRllfT05FX1VTRVIifSx7ImF1dGhvcml0eSI6IkRFTEVURV9PTkVfVVNFUiJ9LHsiYXV0aG9yaXR5IjoiUkVBRF9BTExfVVNFUlMifSx7ImF1dGhvcml0eSI6IlJPTEVfQURNSU5JU1RSQVRPUiJ9XSwibmFtZSI6IkFkbWluaXN0cmFkb3IiLCJzdWIiOiJhZG1pbiIsImlhdCI6MTY5NjU3MzcxMSwiZXhwIjoxNjk2NTc1NTExfQ.br-WfxUY654q23x1vOCXJ6gW5ibD1Qqkoq6QVa_Z6J0",
+									"type": "string"
+								}
+							]
+						},
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "http://localhost:4004/api/ventas/1",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "4004",
+							"path": [
+								"api",
+								"ventas",
+								"1"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "DELETE - Borrar Venta",
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJyb2xlIjoiQURNSU5JU1RSQVRPUiIsInBlcm1pc3Npb25zIjpbeyJhdXRob3JpdHkiOiJTQVZFX09ORV9VU0VSIn0seyJhdXRob3JpdHkiOiJNT0RJRllfT05FX1VTRVIifSx7ImF1dGhvcml0eSI6IkRFTEVURV9PTkVfVVNFUiJ9LHsiYXV0aG9yaXR5IjoiUkVBRF9BTExfVVNFUlMifSx7ImF1dGhvcml0eSI6IlJPTEVfQURNSU5JU1RSQVRPUiJ9XSwibmFtZSI6IkFkbWluaXN0cmFkb3IiLCJzdWIiOiJhZG1pbiIsImlhdCI6MTY5NjU3MzcxMSwiZXhwIjoxNjk2NTc1NTExfQ.br-WfxUY654q23x1vOCXJ6gW5ibD1Qqkoq6QVa_Z6J0",
+									"type": "string"
+								}
+							]
+						},
+						"method": "DELETE",
+						"header": [],
+						"url": {
+							"raw": "http://localhost:4004/api/ventas/3",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "4004",
+							"path": [
+								"api",
+								"ventas",
+								"3"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "POST - Agregar Venta - (requiere crear factura primero)",
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJyb2xlIjoiQURNSU5JU1RSQVRPUiIsInBlcm1pc3Npb25zIjpbeyJhdXRob3JpdHkiOiJTQVZFX09ORV9VU0VSIn0seyJhdXRob3JpdHkiOiJNT0RJRllfT05FX1VTRVIifSx7ImF1dGhvcml0eSI6IkRFTEVURV9PTkVfVVNFUiJ9LHsiYXV0aG9yaXR5IjoiUkVBRF9BTExfVVNFUlMifSx7ImF1dGhvcml0eSI6IlJPTEVfQURNSU5JU1RSQVRPUiJ9XSwibmFtZSI6IkFkbWluaXN0cmFkb3IiLCJzdWIiOiJhZG1pbiIsImlhdCI6MTY5NjU3MzcxMSwiZXhwIjoxNjk2NTc1NTExfQ.br-WfxUY654q23x1vOCXJ6gW5ibD1Qqkoq6QVa_Z6J0",
+									"type": "string"
+								}
+							]
+						},
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n\t\"ordenVenta\": \"OV0000000004\",\r\n\t\"descVenta\": \"Venta del Hyundai Tucson 2024\",\r\n\t\"estadoVenta\": \"CIERRE_GANADO\",\r\n\t\"fechaReserva\": \"2023-10-05 05:00\",\r\n\t\"clienteId\": 2,\r\n\t\"facturaId\": 4,\r\n\t\"userId\": 3\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://localhost:4004/api/ventas",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "4004",
+							"path": [
+								"api",
+								"ventas"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "PUT - Actualizar Venta",
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJyb2xlIjoiQURNSU5JU1RSQVRPUiIsInBlcm1pc3Npb25zIjpbeyJhdXRob3JpdHkiOiJTQVZFX09ORV9VU0VSIn0seyJhdXRob3JpdHkiOiJNT0RJRllfT05FX1VTRVIifSx7ImF1dGhvcml0eSI6IkRFTEVURV9PTkVfVVNFUiJ9LHsiYXV0aG9yaXR5IjoiUkVBRF9BTExfVVNFUlMifSx7ImF1dGhvcml0eSI6IlJPTEVfQURNSU5JU1RSQVRPUiJ9XSwibmFtZSI6IkFkbWluaXN0cmFkb3IiLCJzdWIiOiJhZG1pbiIsImlhdCI6MTY5NjU3MzcxMSwiZXhwIjoxNjk2NTc1NTExfQ.br-WfxUY654q23x1vOCXJ6gW5ibD1Qqkoq6QVa_Z6J0",
+									"type": "string"
+								}
+							]
+						},
+						"method": "PUT",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n\t\"ordenVenta\": \"OV0000000001\",\r\n    \"descVenta\": \"Venta del Nissan Sentra 2023\",\r\n    \"estadoVenta\": \"CIERRE_GANADO\",\r\n    \"fechaReserva\": \"2023-10-05 05:00\",\r\n\t\"clienteId\": 3,\r\n\t\"facturaId\": 4,\r\n\t\"userId\": 3\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://localhost:4004/api/ventas/1",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "4004",
+							"path": [
+								"api",
+								"ventas",
+								"1"
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		},
+		{
+			"name": "Clientes",
+			"item": [
+				{
+					"name": "GET - Clientes",
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJyb2xlIjoiVVNFUiIsInBlcm1pc3Npb25zIjpbeyJhdXRob3JpdHkiOiJSRUFEX0FMTF9VU0VSUyJ9LHsiYXV0aG9yaXR5IjoiUk9MRV9VU0VSIn1dLCJuYW1lIjoiVGlubyIsInN1YiI6InRyZXluYSIsImlhdCI6MTY5NjYxMTE3NSwiZXhwIjoxNjk2NjEyOTc1fQ.1BfytpwjJmAP3ob0EKQyXbbpx8SlM4X4cHicqzsYFlM",
+									"type": "string"
+								}
+							]
+						},
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "http://localhost:4004/api/clientes",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "4004",
+							"path": [
+								"api",
+								"clientes"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "GET - Cliente",
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJyb2xlIjoiQURNSU5JU1RSQVRPUiIsInBlcm1pc3Npb25zIjpbeyJhdXRob3JpdHkiOiJTQVZFX09ORV9VU0VSIn0seyJhdXRob3JpdHkiOiJNT0RJRllfT05FX1VTRVIifSx7ImF1dGhvcml0eSI6IkRFTEVURV9PTkVfVVNFUiJ9LHsiYXV0aG9yaXR5IjoiUkVBRF9BTExfVVNFUlMifSx7ImF1dGhvcml0eSI6IlJPTEVfQURNSU5JU1RSQVRPUiJ9XSwibmFtZSI6IkFkbWluaXN0cmFkb3IiLCJzdWIiOiJhZG1pbiIsImlhdCI6MTY5NjU3MzcxMSwiZXhwIjoxNjk2NTc1NTExfQ.br-WfxUY654q23x1vOCXJ6gW5ibD1Qqkoq6QVa_Z6J0",
+									"type": "string"
+								}
+							]
+						},
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "http://localhost:4004/api/clientes/1",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "4004",
+							"path": [
+								"api",
+								"clientes",
+								"1"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "DELETE - Borrar Cliente",
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJyb2xlIjoiQURNSU5JU1RSQVRPUiIsInBlcm1pc3Npb25zIjpbeyJhdXRob3JpdHkiOiJTQVZFX09ORV9VU0VSIn0seyJhdXRob3JpdHkiOiJNT0RJRllfT05FX1VTRVIifSx7ImF1dGhvcml0eSI6IkRFTEVURV9PTkVfVVNFUiJ9LHsiYXV0aG9yaXR5IjoiUkVBRF9BTExfVVNFUlMifSx7ImF1dGhvcml0eSI6IlJPTEVfQURNSU5JU1RSQVRPUiJ9XSwibmFtZSI6IkFkbWluaXN0cmFkb3IiLCJzdWIiOiJhZG1pbiIsImlhdCI6MTY5NjU3MzcxMSwiZXhwIjoxNjk2NTc1NTExfQ.br-WfxUY654q23x1vOCXJ6gW5ibD1Qqkoq6QVa_Z6J0",
+									"type": "string"
+								}
+							]
+						},
+						"method": "DELETE",
+						"header": [],
+						"url": {
+							"raw": "http://localhost:4004/api/clientes/6",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "4004",
+							"path": [
+								"api",
+								"clientes",
+								"6"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "POST - Agregar Cliente",
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJyb2xlIjoiQURNSU5JU1RSQVRPUiIsInBlcm1pc3Npb25zIjpbeyJhdXRob3JpdHkiOiJTQVZFX09ORV9VU0VSIn0seyJhdXRob3JpdHkiOiJNT0RJRllfT05FX1VTRVIifSx7ImF1dGhvcml0eSI6IkRFTEVURV9PTkVfVVNFUiJ9LHsiYXV0aG9yaXR5IjoiUkVBRF9BTExfVVNFUlMifSx7ImF1dGhvcml0eSI6IlJPTEVfQURNSU5JU1RSQVRPUiJ9XSwibmFtZSI6IkFkbWluaXN0cmFkb3IiLCJzdWIiOiJhZG1pbiIsImlhdCI6MTY5NjU3MzcxMSwiZXhwIjoxNjk2NTc1NTExfQ.br-WfxUY654q23x1vOCXJ6gW5ibD1Qqkoq6QVa_Z6J0",
+									"type": "string"
+								}
+							]
+						},
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"nombreCliente\": \"Jaime\",\r\n    \"apellidosCliente\": \"Pozo\",\r\n    \"docId\": \"47778541\",\r\n    \"tipoDoc\": \"DNI\",\r\n    \"estadoCliente\": \"INTERESADO\",\r\n    \"fonoCliente\": \"962215748\",\r\n    \"emailCliente\": \"jpozo@mail.com\"\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://localhost:4004/api/clientes",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "4004",
+							"path": [
+								"api",
+								"clientes"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "PUT - Actualizar Cliente",
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJyb2xlIjoiQURNSU5JU1RSQVRPUiIsInBlcm1pc3Npb25zIjpbeyJhdXRob3JpdHkiOiJTQVZFX09ORV9VU0VSIn0seyJhdXRob3JpdHkiOiJNT0RJRllfT05FX1VTRVIifSx7ImF1dGhvcml0eSI6IkRFTEVURV9PTkVfVVNFUiJ9LHsiYXV0aG9yaXR5IjoiUkVBRF9BTExfVVNFUlMifSx7ImF1dGhvcml0eSI6IlJPTEVfQURNSU5JU1RSQVRPUiJ9XSwibmFtZSI6IkFkbWluaXN0cmFkb3IiLCJzdWIiOiJhZG1pbiIsImlhdCI6MTY5NjU3MzcxMSwiZXhwIjoxNjk2NTc1NTExfQ.br-WfxUY654q23x1vOCXJ6gW5ibD1Qqkoq6QVa_Z6J0",
+									"type": "string"
+								}
+							]
+						},
+						"method": "PUT",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"nombreCliente\": \"Juan\",\r\n    \"apellidosCliente\": \"Perez\",\r\n    \"docId\": \"48957852\",\r\n    \"tipoDoc\": \"DNI\",\r\n    \"estadoCliente\": \"CLIENTE\",\r\n    \"fonoCliente\": \"978487113\",\r\n    \"emailCliente\": \"jperez@mail.com\"\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://localhost:4004/api/clientes/1",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "4004",
+							"path": [
+								"api",
+								"clientes",
+								"1"
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		}
+	]
+}
