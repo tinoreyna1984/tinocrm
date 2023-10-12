@@ -24,9 +24,11 @@ public class TinocrmApplication {
 	@Bean
 	public CommandLineRunner createPasswordsCommand(){
 		return args -> {
-			System.out.println("Se generan claves...");
+			System.out.println("Aeguramiento de claves - ini");
 			/*System.out.println("Clave u$uari0CRM (usuario): " + passwordEncoder.encode("u$uari0CRM"));
 			System.out.println("Clave Tr20010878 (admin): " + passwordEncoder.encode("Tr20010878"));*/
+			System.out.println("Aeguramiento de claves - fin");
+			System.out.println("Hola mundo! :)");
 		};
 	}
 
