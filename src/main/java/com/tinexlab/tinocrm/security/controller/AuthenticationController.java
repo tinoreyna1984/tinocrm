@@ -32,9 +32,30 @@ public class AuthenticationController {
 
     @PreAuthorize("permitAll")
     @PostMapping("/authenticate")
-    public ResponseEntity<AuthenticationResponse> login(@RequestBody @Valid AuthenticationRequest authRequest){
+    /*public ResponseEntity<AuthenticationResponse> login(@RequestBody @Valid AuthenticationRequest authRequest){
         AuthenticationResponse jwtDto = authenticationService.login(authRequest);
         return ResponseEntity.ok(jwtDto);
+    }*/
+    public ResponseEntity<?> login(@RequestBody @Valid AuthenticationRequest authRequest, BindingResult result){
+        Map<String, Object> response = new HashMap<>();
+        if (result.hasErrors()) {
+            List<String> errors = result.getFieldErrors()
+                    .stream()
+                    .map(err -> "El campo '" + err.getField() + "' " + err.getDefaultMessage())
+                    .collect(Collectors.toList());
+            response.put("errors", errors);
+            return new ResponseEntity<>(response, HttpStatus.BAD_REQUEST);
+        }
+        try{
+            AuthenticationResponse jwtDto = authenticationService.login(authRequest);
+            response.put("mensaje", "Se ha dado acceso al usuario");
+            response.put("jwt", jwtDto.getJwt());
+            return new ResponseEntity<>(response, HttpStatus.OK);
+        }catch (DataAccessException e) {
+            response.put("mensaje", "Error al registrar el usuario en la base de datos");
+            response.put("error", e.getMessage().concat(": ").concat(e.getMostSpecificCause().getMessage()));
+            return new ResponseEntity<>(response, HttpStatus.INTERNAL_SERVER_ERROR);
+        }
     }
 
     @PreAuthorize("permitAll")
@@ -63,7 +84,6 @@ public class AuthenticationController {
             response.put("error", e.getMessage().concat(": ").concat(e.getMostSpecificCause().getMessage()));
             return new ResponseEntity<>(response, HttpStatus.INTERNAL_SERVER_ERROR);
         }
-
     }
 
     @PreAuthorize("permitAll")
