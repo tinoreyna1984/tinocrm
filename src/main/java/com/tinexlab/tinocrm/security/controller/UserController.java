@@ -1,5 +1,6 @@
 package com.tinexlab.tinocrm.security.controller;
 
+import com.tinexlab.tinocrm.business.entity.Venta;
 import com.tinexlab.tinocrm.security.entity.User;
 import com.tinexlab.tinocrm.security.repository.UserRepository;
 import com.tinexlab.tinocrm.security.util.Role;
@@ -7,6 +8,7 @@ import jakarta.validation.Valid;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.dao.DataAccessException;
 import org.springframework.data.domain.Page;
+import org.springframework.data.domain.PageRequest;
 import org.springframework.data.domain.Pageable;
 import org.springframework.data.web.PageableDefault;
 import org.springframework.http.HttpStatus;
@@ -39,8 +41,23 @@ public class UserController {
 
     @PreAuthorize("hasRole('ROLE_ADMINISTRATOR')")
     @GetMapping("/users")
-    public ResponseEntity<Page<User>> listarUsuarios (@PageableDefault(page=0, size=5) Pageable pageable){
+    /*public ResponseEntity<Page<User>> listarUsuarios (@PageableDefault(page=0, size=5) Pageable pageable){
         return ResponseEntity.ok(userRepository.findAll(pageable));
+    }*/
+    // devuelve una lista completa o paginada si viajan parámetros de paginación
+    public ResponseEntity<Object> listarUsuarios(
+            @RequestParam(required = false) Integer page,
+            @RequestParam(required = false) Integer size) {
+        if (page != null && size != null) {
+            // Si se proporcionan los parámetros de paginación, devuelve una lista paginada
+            Pageable pageable = PageRequest.of(page, size);
+            Page<User> pageResult = userRepository.findAll(pageable);
+            return ResponseEntity.ok(pageResult);
+        } else {
+            // Si no se proporcionan los parámetros de paginación, devuelve una lista completa
+            List<User> users = userRepository.findAll();
+            return ResponseEntity.ok(users);
+        }
     }
 
     @PreAuthorize("hasRole('ROLE_ADMINISTRATOR')")

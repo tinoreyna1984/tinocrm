@@ -13,6 +13,7 @@ import jakarta.validation.Valid;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.dao.DataAccessException;
 import org.springframework.data.domain.Page;
+import org.springframework.data.domain.PageRequest;
 import org.springframework.data.domain.Pageable;
 import org.springframework.data.web.PageableDefault;
 import org.springframework.http.HttpStatus;
@@ -41,8 +42,23 @@ public class VentaController {
 
     @PreAuthorize("hasAnyRole('ROLE_ADMINISTRATOR','ROLE_USER')")
     @GetMapping("/ventas")
-    public ResponseEntity<Page<Venta>> listarVentas (@PageableDefault(page=0, size=5) Pageable pageable){
+    /*public ResponseEntity<Page<Venta>> listarVentas (@PageableDefault(page=0, size=5) Pageable pageable){
         return ResponseEntity.ok(ventaRepository.findAll(pageable));
+    }*/
+    // devuelve una lista completa o paginada si viajan parámetros de paginación
+    public ResponseEntity<Object> listarVentas(
+            @RequestParam(required = false) Integer page,
+            @RequestParam(required = false) Integer size) {
+        if (page != null && size != null) {
+            // Si se proporcionan los parámetros de paginación, devuelve una lista paginada
+            Pageable pageable = PageRequest.of(page, size);
+            Page<Venta> pageResult = ventaRepository.findAll(pageable);
+            return ResponseEntity.ok(pageResult);
+        } else {
+            // Si no se proporcionan los parámetros de paginación, devuelve una lista completa
+            List<Venta> ventas = ventaRepository.findAll();
+            return ResponseEntity.ok(ventas);
+        }
     }
 
     @PreAuthorize("hasAnyRole('ROLE_ADMINISTRATOR','ROLE_USER')")

@@ -9,6 +9,7 @@ import jakarta.validation.Valid;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.dao.DataAccessException;
 import org.springframework.data.domain.Page;
+import org.springframework.data.domain.PageRequest;
 import org.springframework.data.domain.Pageable;
 import org.springframework.data.web.PageableDefault;
 import org.springframework.http.HttpStatus;
@@ -31,9 +32,24 @@ public class FacturaController {
     @Autowired
     private ProductoRepository productoRepository;
 
+    @PreAuthorize("hasAnyRole('ROLE_ADMINISTRATOR','ROLE_USER')")
     @GetMapping("/facturas")
-    public ResponseEntity<Page<Factura>> listarFacturas (@PageableDefault(page=0, size=5) Pageable pageable){
+    /*public ResponseEntity<Page<Factura>> listarFacturas (@PageableDefault(page=0, size=5) Pageable pageable){
         return ResponseEntity.ok(facturaRepository.findAll(pageable));
+    }*/
+    public ResponseEntity<Object> listarFacturas(
+            @RequestParam(required = false) Integer page,
+            @RequestParam(required = false) Integer size) {
+        if (page != null && size != null) {
+            // Si se proporcionan los parámetros de paginación, devuelve una lista paginada
+            Pageable pageable = PageRequest.of(page, size);
+            Page<Factura> pageResult = facturaRepository.findAll(pageable);
+            return ResponseEntity.ok(pageResult);
+        } else {
+            // Si no se proporcionan los parámetros de paginación, devuelve una lista completa
+            List<Factura> facturas = facturaRepository.findAll();
+            return ResponseEntity.ok(facturas);
+        }
     }
 
     @PreAuthorize("hasAnyRole('ROLE_ADMINISTRATOR','ROLE_USER')")

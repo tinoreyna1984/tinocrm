@@ -7,8 +7,8 @@ import jakarta.validation.Valid;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.dao.DataAccessException;
 import org.springframework.data.domain.Page;
+import org.springframework.data.domain.PageRequest;
 import org.springframework.data.domain.Pageable;
-import org.springframework.data.web.PageableDefault;
 import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
 import org.springframework.security.access.prepost.PreAuthorize;
@@ -29,11 +29,22 @@ public class ClienteController {
 
     @PreAuthorize("hasAnyRole('ROLE_ADMINISTRATOR','ROLE_USER')")
     @GetMapping("/clientes")
-    // por defecto quiero que comience en la primera página (se cuenta desde cero)
-    // y que se muestre 5 elementos por página.
-    // Es norma para todos los GET de los controladores (aunque pueda variar en el parámetro size)
-    public ResponseEntity<Page<Cliente>> listarClientes (@PageableDefault(page=0, size=5) Pageable pageable){
+    /*public ResponseEntity<Page<Cliente>> listarClientes (@PageableDefault(page=0, size=5) Pageable pageable){
         return ResponseEntity.ok(clienteRepository.findAll(pageable));
+    }*/
+    public ResponseEntity<Object> listarClientes(
+            @RequestParam(required = false) Integer page,
+            @RequestParam(required = false) Integer size) {
+        if (page != null && size != null) {
+            // Si se proporcionan los parámetros de paginación, devuelve una lista paginada
+            Pageable pageable = PageRequest.of(page, size);
+            Page<Cliente> pageResult = clienteRepository.findAll(pageable);
+            return ResponseEntity.ok(pageResult);
+        } else {
+            // Si no se proporcionan los parámetros de paginación, devuelve una lista completa
+            List<Cliente> clientes = clienteRepository.findAll();
+            return ResponseEntity.ok(clientes);
+        }
     }
 
     @PreAuthorize("hasAnyRole('ROLE_ADMINISTRATOR','ROLE_USER')")
