@@ -45,7 +45,7 @@ public class Cliente {
     private String emailCliente;
 
     // un cliente puede haber participado de varias adquisiciones
-    @OneToMany(mappedBy = "cliente")
+    @OneToMany(mappedBy = "cliente", cascade = {CascadeType.PERSIST, CascadeType.MERGE, CascadeType.REMOVE}, orphanRemoval = true)
     @JsonBackReference
     @JsonProperty(access = JsonProperty.Access.READ_ONLY) // previene la validación innecesaria del Content-Type
     private List<Venta> ventas;

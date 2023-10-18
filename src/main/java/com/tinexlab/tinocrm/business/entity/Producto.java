@@ -26,7 +26,7 @@ public class Producto {
     @Column(name = "precio_producto", columnDefinition="Decimal(10,2) default '0.00'")
     private Double precioProducto;
 
-    @OneToMany(mappedBy = "producto")
+    @OneToMany(mappedBy = "producto", cascade = {CascadeType.PERSIST, CascadeType.MERGE, CascadeType.REMOVE}, orphanRemoval = true)
     @JsonBackReference
     @JsonProperty(access = JsonProperty.Access.READ_ONLY) // previene la validación innecesaria del Content-Type
     private List<Factura> facturas;

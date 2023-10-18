@@ -41,7 +41,7 @@ public class Venta {
     @JoinColumn(name="cliente_id", referencedColumnName = "cliente_id")
     @JsonManagedReference
     private Cliente cliente;
-    @OneToOne(cascade = CascadeType.ALL)
+    @OneToOne(cascade = {CascadeType.PERSIST, CascadeType.MERGE, CascadeType.REMOVE}, orphanRemoval = true)
     @JoinColumn(name = "factura_id", referencedColumnName = "factura_id")
     @JsonManagedReference
     private Factura factura;
