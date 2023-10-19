@@ -45,7 +45,7 @@ public class Venta {
     @JoinColumn(name = "factura_id", referencedColumnName = "factura_id")
     @JsonManagedReference
     private Factura factura;
-    @ManyToOne
+    @ManyToOne(cascade = {CascadeType.PERSIST, CascadeType.MERGE, CascadeType.REMOVE})
     @JoinColumn(name="usuario_id", referencedColumnName = "usuario_id")
     @JsonManagedReference
     private User user;

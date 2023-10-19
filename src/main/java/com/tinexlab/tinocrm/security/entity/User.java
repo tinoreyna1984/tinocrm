@@ -35,7 +35,7 @@ public class User implements UserDetails {
     private Role role;
 
     // relación con las ventas
-    @OneToMany(mappedBy = "user")
+    @OneToMany(mappedBy = "user", cascade = {CascadeType.PERSIST, CascadeType.MERGE, CascadeType.REMOVE}, orphanRemoval = true)
     @JsonProperty(access = JsonProperty.Access.READ_ONLY) // previene la validación innecesaria del Content-Type
     @JsonBackReference
     private List<Venta> ventas;
