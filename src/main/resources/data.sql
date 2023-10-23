@@ -15,16 +15,48 @@ INSERT INTO productos (nombre_producto, desc_producto, precio_producto) VALUES (
 INSERT INTO clientes (nombre_cliente, apellidos_cliente, doc_id, fono_cliente, email_cliente) VALUES ('Juan', 'Perez', '48957852', '978487113', 'jperez@mail.com');
 INSERT INTO clientes (nombre_cliente, apellidos_cliente, doc_id, fono_cliente, email_cliente) VALUES ('Jose', 'Collado', '74981524', '996315944', 'jcollado@mail.com');
 INSERT INTO clientes (nombre_cliente, apellidos_cliente, doc_id, fono_cliente, email_cliente) VALUES ('Luis', 'Beltran', '42667848', '976325910', 'lbeltran@mail.com');
+INSERT INTO clientes (nombre_cliente, apellidos_cliente, doc_id, fono_cliente, email_cliente) VALUES ('Ana', 'Silva', '48159784', '979814523', 'asilva@mail.com');
+INSERT INTO clientes (nombre_cliente, apellidos_cliente, doc_id, fono_cliente, email_cliente) VALUES ('Maria', 'Mas', '48120365', '925631586', 'mmas@mail.com');
+INSERT INTO clientes (nombre_cliente, apellidos_cliente, doc_id, fono_cliente, email_cliente) VALUES ('Carlos', 'Castro', '48874963', '948915742', 'ccastro@mail.com');
+INSERT INTO clientes (nombre_cliente, apellidos_cliente, doc_id, fono_cliente, email_cliente) VALUES ('Erick', 'Ortega', '41023654', '971123640', 'eortega@mail.com');
+INSERT INTO clientes (nombre_cliente, apellidos_cliente, doc_id, fono_cliente, email_cliente) VALUES ('Carolina', 'Giraldo', '48957852', '998710245', 'cgiraldo@mail.com');
+INSERT INTO clientes (nombre_cliente, apellidos_cliente, doc_id, fono_cliente, email_cliente) VALUES ('Pamela', 'Ponce', '75124578', '936541298', 'pponce@mail.com');
+INSERT INTO clientes (nombre_cliente, apellidos_cliente, doc_id, fono_cliente, email_cliente) VALUES ('Julio', 'Gomez', '75963124', '923045678', 'jgomez@mail.com');
+INSERT INTO clientes (nombre_cliente, apellidos_cliente, doc_id, fono_cliente, email_cliente) VALUES ('Romualdo', 'Duarte', '75784986', '978475263', 'rduarte@mail.com');
+INSERT INTO clientes (nombre_cliente, apellidos_cliente, doc_id, fono_cliente, email_cliente) VALUES ('Joyce', 'Pecker', '72130458', '973214568', 'jpecker@mail.com');
+INSERT INTO clientes (nombre_cliente, apellidos_cliente, doc_id, fono_cliente, email_cliente) VALUES ('Melissa', 'Granda', '71945886', '965415748', 'mgranda@mail.com');
 
 INSERT INTO clientes (nombre_cliente, apellidos_cliente, doc_id, fono_cliente, email_cliente, estado_cliente) VALUES ('Saul', 'Pazos', '10991520', '944528741', 'spazos@mail.com', 'CLIENTE');
 INSERT INTO clientes (nombre_cliente, apellidos_cliente, doc_id, fono_cliente, email_cliente, estado_cliente) VALUES ('Roman', 'Bejar', '43117840', '922361024', 'rbejar@mail.com', 'CLIENTE');
 INSERT INTO clientes (nombre_cliente, apellidos_cliente, doc_id, fono_cliente, email_cliente, estado_cliente) VALUES ('Alberto', 'Light', '42889563', '921458200', 'alight@mail.com', 'CLIENTE');
+INSERT INTO clientes (nombre_cliente, apellidos_cliente, doc_id, fono_cliente, email_cliente, estado_cliente) VALUES ('Joseph', 'Keller', '10328594', '986957166', 'jkeller@mail.com', 'CLIENTE');
+INSERT INTO clientes (nombre_cliente, apellidos_cliente, doc_id, fono_cliente, email_cliente, estado_cliente) VALUES ('Antonio', 'Nishi', '10778451', '914744463', 'anishi@mail.com', 'CLIENTE');
+INSERT INTO clientes (nombre_cliente, apellidos_cliente, doc_id, fono_cliente, email_cliente, estado_cliente) VALUES ('Paul', 'Wang', '44965812', '966451025', 'pwang@mail.com', 'CLIENTE');
+INSERT INTO clientes (nombre_cliente, apellidos_cliente, doc_id, fono_cliente, email_cliente, estado_cliente) VALUES ('Renzo', 'Preciado', '10226548', '999417844', 'rpreciado@mail.com', 'CLIENTE');
+INSERT INTO clientes (nombre_cliente, apellidos_cliente, doc_id, fono_cliente, email_cliente, estado_cliente) VALUES ('Jacqueline', 'Diaz del Olmo', '75635548', '951420333', 'jdiazdelolmo@mail.com', 'CLIENTE');
+INSERT INTO clientes (nombre_cliente, apellidos_cliente, doc_id, fono_cliente, email_cliente, estado_cliente) VALUES ('Cassandra', 'De Bernardi', '75113256', '957785422', 'cdebernardi@mail.com', 'CLIENTE');
+INSERT INTO clientes (nombre_cliente, apellidos_cliente, doc_id, fono_cliente, email_cliente, estado_cliente) VALUES ('Martin', 'Gomez', '75487125', '939586241', 'mgomez@mail.com', 'CLIENTE');
 
 INSERT INTO facturas (producto_id, cod_factura, forma_pago, fecha_pago) VALUES (2, 'INV0000000001', 'OTRO', '2023-04-25');
 INSERT INTO facturas (producto_id, cod_factura, forma_pago, fecha_pago) VALUES (3, 'INV0000000002', 'OTRO', '2023-02-11');
 INSERT INTO facturas (producto_id, cod_factura, forma_pago, fecha_pago) VALUES (4, 'INV0000000003', 'OTRO', '2023-05-23');
+INSERT INTO facturas (producto_id, cod_factura, forma_pago, fecha_pago) VALUES (2, 'INV0000000004', 'OTRO', '2023-04-25');
+INSERT INTO facturas (producto_id, cod_factura, forma_pago, fecha_pago) VALUES (2, 'INV0000000005', 'OTRO', '2023-02-11');
+INSERT INTO facturas (producto_id, cod_factura, forma_pago, fecha_pago) VALUES (1, 'INV0000000006', 'OTRO', '2023-02-11');
+INSERT INTO facturas (producto_id, cod_factura, forma_pago, fecha_pago) VALUES (3, 'INV0000000007', 'OTRO', '2023-03-10');
+INSERT INTO facturas (producto_id, cod_factura, forma_pago, fecha_pago) VALUES (5, 'INV0000000008', 'OTRO', '2023-02-11');
+INSERT INTO facturas (producto_id, cod_factura, forma_pago, fecha_pago) VALUES (2, 'INV0000000009', 'OTRO', '2023-04-25');
+INSERT INTO facturas (producto_id, cod_factura, forma_pago, fecha_pago) VALUES (2, 'INV0000000010', 'OTRO', '2023-04-25');
 
-INSERT INTO ventas (orden_venta, desc_venta, fecha_reserva, estado_venta, factura_id, cliente_id, usuario_id) VALUES ('OV0000000001', 'Venta del Nissan Sentra 2023', '2023-02-12', 'CIERRE_GANADO', 1, 4, 2);
-INSERT INTO ventas (orden_venta, desc_venta, fecha_reserva, estado_venta, factura_id, cliente_id, usuario_id) VALUES ('OV0000000002', 'Kawasaki Z1000 2023', '2023-01-13', 'CIERRE_GANADO', 2, 5, 2);
-INSERT INTO ventas (orden_venta, desc_venta, fecha_reserva, estado_venta, factura_id, cliente_id, usuario_id) VALUES ('OV0000000003', 'Hyundai Tucson 2024', '2023-03-12', 'CIERRE_GANADO', 3, 6, 3);
+
+INSERT INTO ventas (orden_venta, desc_venta, fecha_reserva, estado_venta, factura_id, cliente_id, usuario_id) VALUES ('OV0000000001', 'Orden de venta concretado', '2023-03-18', 'CIERRE_GANADO', 1, 4, 2);
+INSERT INTO ventas (orden_venta, desc_venta, fecha_reserva, estado_venta, factura_id, cliente_id, usuario_id) VALUES ('OV0000000002', 'Orden de venta concretado', '2023-01-04', 'CIERRE_GANADO', 2, 5, 2);
+INSERT INTO ventas (orden_venta, desc_venta, fecha_reserva, estado_venta, factura_id, cliente_id, usuario_id) VALUES ('OV0000000003', 'Orden de venta concretado', '2023-04-18', 'CIERRE_GANADO', 3, 6, 3);
+INSERT INTO ventas (orden_venta, desc_venta, fecha_reserva, estado_venta, factura_id, cliente_id, usuario_id) VALUES ('OV0000000004', 'Orden de venta concretado', '2023-03-18', 'CIERRE_GANADO', 4, 8, 2);
+INSERT INTO ventas (orden_venta, desc_venta, fecha_reserva, estado_venta, factura_id, cliente_id, usuario_id) VALUES ('OV0000000005', 'Orden de venta concretado', '2023-01-04', 'CIERRE_GANADO', 5, 10, 2);
+INSERT INTO ventas (orden_venta, desc_venta, fecha_reserva, estado_venta, factura_id, cliente_id, usuario_id) VALUES ('OV0000000006', 'Orden de venta concretado', '2023-01-05', 'CIERRE_GANADO', 6, 7, 2);
+INSERT INTO ventas (orden_venta, desc_venta, fecha_reserva, estado_venta, factura_id, cliente_id, usuario_id) VALUES ('OV0000000007', 'Orden de venta concretado', '2023-02-08', 'CIERRE_GANADO', 7, 9, 3);
+INSERT INTO ventas (orden_venta, desc_venta, fecha_reserva, estado_venta, factura_id, cliente_id, usuario_id) VALUES ('OV0000000008', 'Orden de venta concretado', '2023-01-04', 'CIERRE_GANADO', 8, 1, 3);
+INSERT INTO ventas (orden_venta, desc_venta, fecha_reserva, estado_venta, factura_id, cliente_id, usuario_id) VALUES ('OV0000000009', 'Orden de venta concretado', '2023-03-16', 'CIERRE_GANADO', 9, 2, 3);
+INSERT INTO ventas (orden_venta, desc_venta, fecha_reserva, estado_venta, factura_id, cliente_id, usuario_id) VALUES ('OV0000000010', 'Orden de venta concretado', '2023-03-20', 'CIERRE_GANADO', 10, 3, 2);
 

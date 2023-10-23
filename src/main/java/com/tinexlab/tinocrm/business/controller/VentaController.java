@@ -15,10 +15,11 @@ import org.springframework.dao.DataAccessException;
 import org.springframework.data.domain.Page;
 import org.springframework.data.domain.PageRequest;
 import org.springframework.data.domain.Pageable;
-import org.springframework.data.web.PageableDefault;
 import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
 import org.springframework.security.access.prepost.PreAuthorize;
+import org.springframework.security.core.Authentication;
+import org.springframework.security.core.context.SecurityContextHolder;
 import org.springframework.validation.BindingResult;
 import org.springframework.web.bind.annotation.*;
 
@@ -42,14 +43,12 @@ public class VentaController {
 
     @PreAuthorize("hasAnyRole('ROLE_ADMINISTRATOR','ROLE_USER')")
     @GetMapping("/ventas")
-    /*public ResponseEntity<Page<Venta>> listarVentas (@PageableDefault(page=0, size=5) Pageable pageable){
-        return ResponseEntity.ok(ventaRepository.findAll(pageable));
-    }*/
     // devuelve una lista completa o paginada si viajan parámetros de paginación
     public ResponseEntity<Object> listarVentas(
             @RequestParam(required = false) Integer page,
             @RequestParam(required = false) Integer size) {
-        if (page != null && size != null) {
+
+        /*if (page != null && size != null) {
             // Si se proporcionan los parámetros de paginación, devuelve una lista paginada
             Pageable pageable = PageRequest.of(page, size);
             Page<Venta> pageResult = ventaRepository.findAll(pageable);
@@ -58,7 +57,44 @@ public class VentaController {
             // Si no se proporcionan los parámetros de paginación, devuelve una lista completa
             List<Venta> ventas = ventaRepository.findAll();
             return ResponseEntity.ok(ventas);
+        }*/
+
+        // se obtienen los valores de autenticación para verificar el usuario y su rol
+        Authentication authentication = SecurityContextHolder.getContext().getAuthentication();
+
+        if(authentication != null && authentication.isAuthenticated()){
+            // se busca usuario por username
+            String username = authentication.getName();
+            User user = userRepository.findByUsername(username).get();
+
+            // verifica rol
+            if (authentication.getAuthorities().stream().anyMatch(a -> a.getAuthority().equals("ROLE_ADMINISTRATOR"))) {
+                // si el usuario es administrador, mostrar todos los registros sin filtro
+                if (page != null && size != null) {
+                    Pageable pageable = PageRequest.of(page, size);
+                    Page<Venta> pageResult = ventaRepository.findAll(pageable);
+                    return ResponseEntity.ok(pageResult);
+                } else {
+                    List<Venta> ventas = ventaRepository.findAll();
+                    return ResponseEntity.ok(ventas);
+                }
+            } else if (authentication.getAuthorities().stream().anyMatch(a -> a.getAuthority().equals("ROLE_USER"))) {
+                // si el usuario es usuario, mostrar solo sus registros
+                if (page != null && size != null) {
+                    Pageable pageable = PageRequest.of(page, size);
+                    Page<Venta> pageResult = ventaRepository.findByUser(user, pageable);
+                    return ResponseEntity.ok(pageResult);
+                } else {
+                    List<Venta> ventas = ventaRepository.findByUser(user);
+                    return ResponseEntity.ok(ventas);
+                }
+            } else {
+                // para cualquier otro rol
+                return ResponseEntity.status(HttpStatus.FORBIDDEN).build();
+            }
         }
+        // si no se halla el usuario
+        return ResponseEntity.status(HttpStatus.UNAUTHORIZED).build();
     }
 
     @PreAuthorize("hasAnyRole('ROLE_ADMINISTRATOR','ROLE_USER')")
