@@ -1,5 +1,6 @@
 package com.tinexlab.tinocrm.security.service;
 
+import com.tinexlab.tinocrm.security.config.implementation.CustomUserDetails;
 import com.tinexlab.tinocrm.security.dto.AuthenticationRequest;
 import com.tinexlab.tinocrm.security.dto.AuthenticationResponse;
 import com.tinexlab.tinocrm.security.dto.RegistrationRequest;
@@ -59,13 +60,15 @@ public class AuthenticationService {
 
     private Map<String, Object> generateExtraClaims(User user) {
 
+        CustomUserDetails customUserDetails = new CustomUserDetails(user); // implementación con clases Custom
+
         Map<String, Object> extraClaims = new HashMap<>();
         extraClaims.put("userId", user.getId()); //
         extraClaims.put("name", user.getName());
         extraClaims.put("lastName", user.getLastName()); //
         extraClaims.put("email", user.getEmail()); //
         extraClaims.put("role", user.getRole().name());
-        extraClaims.put("permissions", user.getAuthorities());
+        extraClaims.put("permissions", customUserDetails.getAuthorities());
 
         return extraClaims;
     }

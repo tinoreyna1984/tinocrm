@@ -1,6 +1,7 @@
 package com.tinexlab.tinocrm.security.config;
 
 import com.tinexlab.tinocrm.security.config.filter.JwtAuthenticationFilter;
+import com.tinexlab.tinocrm.security.config.implementation.CustomDaoAuthenticationProvider;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.context.annotation.Bean;
 import org.springframework.security.authentication.AuthenticationProvider;
@@ -17,8 +18,12 @@ import org.springframework.stereotype.Component;
 @EnableMethodSecurity
 public class HttpSecurityConfig {
 
+    /*@Autowired
+    private AuthenticationProvider authenticationProvider;*/
+
+    // implementación con clases Custom
     @Autowired
-    private AuthenticationProvider authenticationProvider;
+    private CustomDaoAuthenticationProvider customDaoAuthenticationProvider;
 
     @Autowired
     private JwtAuthenticationFilter authenticationFilter;
@@ -29,7 +34,8 @@ public class HttpSecurityConfig {
         http
                 .csrf( csrfConfig -> csrfConfig.disable() )
                 .sessionManagement( sessionMangConfig -> sessionMangConfig.sessionCreationPolicy(SessionCreationPolicy.STATELESS) )
-                .authenticationProvider(authenticationProvider)
+                //.authenticationProvider(authenticationProvider)
+                .authenticationProvider(customDaoAuthenticationProvider) // implementación con clases Custom
                 .addFilterBefore(authenticationFilter, UsernamePasswordAuthenticationFilter.class)
                 // .authorizeHttpRequests(builderRequestMatchers())
         ;

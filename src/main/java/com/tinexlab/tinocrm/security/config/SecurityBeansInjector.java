@@ -1,11 +1,11 @@
 package com.tinexlab.tinocrm.security.config;
 
+import com.tinexlab.tinocrm.security.config.implementation.CustomDaoAuthenticationProvider;
+import com.tinexlab.tinocrm.security.config.implementation.CustomUserDetailsService;
 import com.tinexlab.tinocrm.security.repository.UserRepository;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.context.annotation.Bean;
 import org.springframework.security.authentication.AuthenticationManager;
-import org.springframework.security.authentication.AuthenticationProvider;
-import org.springframework.security.authentication.dao.DaoAuthenticationProvider;
 import org.springframework.security.config.annotation.authentication.configuration.AuthenticationConfiguration;
 import org.springframework.security.core.userdetails.UserDetailsService;
 import org.springframework.security.crypto.bcrypt.BCryptPasswordEncoder;
@@ -24,24 +24,25 @@ public class SecurityBeansInjector {
     }
 
     @Bean
-    public AuthenticationProvider authenticationProvider(){
-        DaoAuthenticationProvider provider = new DaoAuthenticationProvider();
-        provider.setUserDetailsService(userDetailsService());
-        provider.setPasswordEncoder(passwordEncoder());
-        return provider;
-    }
-
-    @Bean
     public PasswordEncoder passwordEncoder(){
         return new BCryptPasswordEncoder();
     }
 
+    // implementación con clases Custom
     @Bean
     public UserDetailsService userDetailsService(){
         return username -> {
-            return userRepository.findByUsername(username)
-                    .orElseThrow(() -> new RuntimeException("User not found"));
+            CustomUserDetailsService customUserDetailsService = new CustomUserDetailsService(userRepository);
+            return customUserDetailsService.loadUserByUsername(username);
         };
     }
 
+    // implementación con clases Custom
+    @Bean
+    public CustomDaoAuthenticationProvider authenticationProvider(){
+        CustomDaoAuthenticationProvider provider = new CustomDaoAuthenticationProvider(userRepository);
+        provider.setUserDetailsService(userDetailsService());
+        provider.setPasswordEncoder(passwordEncoder());
+        return provider;
+    }
 }

@@ -11,6 +11,7 @@ import org.springframework.dao.DataAccessException;
 import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
 import org.springframework.security.access.prepost.PreAuthorize;
+import org.springframework.security.core.AuthenticationException;
 import org.springframework.validation.BindingResult;
 import org.springframework.web.bind.annotation.*;
 
@@ -55,6 +56,10 @@ public class AuthenticationController {
             response.put("mensaje", "Error al registrar el usuario en la base de datos");
             response.put("error", e.getMessage().concat(": ").concat(e.getMostSpecificCause().getMessage()));
             return new ResponseEntity<>(response, HttpStatus.INTERNAL_SERVER_ERROR);
+        }catch (AuthenticationException e) {
+            response.put("error", e.getMessage());
+            response.put("mensaje", "Error en autenticación");
+            return new ResponseEntity<>(response, HttpStatus.FORBIDDEN);
         }
     }
 

@@ -1,5 +1,6 @@
 package com.tinexlab.tinocrm.security.config.filter;
 
+import com.tinexlab.tinocrm.security.config.implementation.CustomUserDetails;
 import com.tinexlab.tinocrm.security.entity.User;
 import com.tinexlab.tinocrm.security.repository.UserRepository;
 import com.tinexlab.tinocrm.security.service.JwtService;
@@ -44,8 +45,9 @@ public class JwtAuthenticationFilter extends OncePerRequestFilter {
         //4. Setear un objeto Authentication dentro del SecurityContext
 
         User user = userRepository.findByUsername(username).get();
+        CustomUserDetails customUserDetails = new CustomUserDetails(user); // implementación con clases Custom
         UsernamePasswordAuthenticationToken authToken = new UsernamePasswordAuthenticationToken(
-                username, null, user.getAuthorities()
+                username, null, customUserDetails.getAuthorities()
         );
         SecurityContextHolder.getContext().setAuthentication(authToken);
 
