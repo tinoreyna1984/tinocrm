@@ -114,6 +114,21 @@ public class VentaController {
     }
 
     @PreAuthorize("hasAnyRole('ROLE_ADMINISTRATOR','ROLE_USER')")
+    @GetMapping("/ventas/next-id-venta")
+    public ResponseEntity<?> siguienteId(){
+        Map<String, Object> response = new HashMap<>();
+        Long nextId = 0L;
+        try{
+            nextId = ventaRepository.getNextId();
+        }catch(DataAccessException e) {
+            response.put("mensaje", "Error al realizar la consulta en la base de datos");
+            response.put("error", e.getMessage().concat(": ").concat(e.getMostSpecificCause().getMessage()));
+            return new ResponseEntity<Map<String, Object>>(response, HttpStatus.INTERNAL_SERVER_ERROR);
+        }
+
+        return ResponseEntity.ok(nextId);
+    }
+    @PreAuthorize("hasAnyRole('ROLE_ADMINISTRATOR','ROLE_USER')")
     @PostMapping("/ventas")
     public ResponseEntity<?> guardarVenta(@Valid @RequestBody VentaRequest ventaRequest, BindingResult result) {
         Map<String, Object> response = new HashMap<>();
