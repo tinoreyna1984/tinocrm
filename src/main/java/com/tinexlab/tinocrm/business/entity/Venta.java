@@ -27,7 +27,7 @@ public class Venta {
     private String descVenta;
 
     @Column(name = "estado_venta")
-    @ColumnDefault("'LEAD'")
+    @ColumnDefault("'RESERVADO'")
     @Enumerated(EnumType.STRING)
     private EstadoVenta estadoVenta;
 

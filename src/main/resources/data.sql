@@ -49,14 +49,14 @@ INSERT INTO facturas (producto_id, cod_factura, forma_pago, fecha_pago) VALUES (
 INSERT INTO facturas (producto_id, cod_factura, forma_pago, fecha_pago) VALUES (2, 'INV0000000010', 'OTRO', '2023-04-25');
 
 
-INSERT INTO ventas (orden_venta, desc_venta, fecha_reserva, estado_venta, factura_id, cliente_id, usuario_id) VALUES ('OV0000000001', 'Orden de venta concretado', '2023-03-18', 'CIERRE_GANADO', 1, 4, 2);
-INSERT INTO ventas (orden_venta, desc_venta, fecha_reserva, estado_venta, factura_id, cliente_id, usuario_id) VALUES ('OV0000000002', 'Orden de venta concretado', '2023-01-04', 'CIERRE_GANADO', 2, 5, 2);
-INSERT INTO ventas (orden_venta, desc_venta, fecha_reserva, estado_venta, factura_id, cliente_id, usuario_id) VALUES ('OV0000000003', 'Orden de venta concretado', '2023-04-18', 'CIERRE_GANADO', 3, 6, 3);
-INSERT INTO ventas (orden_venta, desc_venta, fecha_reserva, estado_venta, factura_id, cliente_id, usuario_id) VALUES ('OV0000000004', 'Orden de venta concretado', '2023-03-18', 'CIERRE_GANADO', 4, 8, 2);
-INSERT INTO ventas (orden_venta, desc_venta, fecha_reserva, estado_venta, factura_id, cliente_id, usuario_id) VALUES ('OV0000000005', 'Orden de venta concretado', '2023-01-04', 'CIERRE_GANADO', 5, 10, 2);
-INSERT INTO ventas (orden_venta, desc_venta, fecha_reserva, estado_venta, factura_id, cliente_id, usuario_id) VALUES ('OV0000000006', 'Orden de venta concretado', '2023-01-05', 'CIERRE_GANADO', 6, 7, 2);
-INSERT INTO ventas (orden_venta, desc_venta, fecha_reserva, estado_venta, factura_id, cliente_id, usuario_id) VALUES ('OV0000000007', 'Orden de venta concretado', '2023-02-08', 'CIERRE_GANADO', 7, 9, 3);
-INSERT INTO ventas (orden_venta, desc_venta, fecha_reserva, estado_venta, factura_id, cliente_id, usuario_id) VALUES ('OV0000000008', 'Orden de venta concretado', '2023-01-04', 'CIERRE_GANADO', 8, 1, 3);
-INSERT INTO ventas (orden_venta, desc_venta, fecha_reserva, estado_venta, factura_id, cliente_id, usuario_id) VALUES ('OV0000000009', 'Orden de venta concretado', '2023-03-16', 'CIERRE_GANADO', 9, 2, 3);
-INSERT INTO ventas (orden_venta, desc_venta, fecha_reserva, estado_venta, factura_id, cliente_id, usuario_id) VALUES ('OV0000000010', 'Orden de venta concretado', '2023-03-20', 'CIERRE_GANADO', 10, 3, 2);
+INSERT INTO ventas (orden_venta, desc_venta, fecha_reserva, estado_venta, factura_id, cliente_id, usuario_id) VALUES ('OV0000000001', 'Orden de venta concretado', '2023-03-18', 'PAGADO', 1, 4, 2);
+INSERT INTO ventas (orden_venta, desc_venta, fecha_reserva, estado_venta, factura_id, cliente_id, usuario_id) VALUES ('OV0000000002', 'Orden de venta concretado', '2023-01-04', 'PAGADO', 2, 5, 2);
+INSERT INTO ventas (orden_venta, desc_venta, fecha_reserva, estado_venta, factura_id, cliente_id, usuario_id) VALUES ('OV0000000003', 'Orden de venta concretado', '2023-04-18', 'PAGADO', 3, 6, 3);
+INSERT INTO ventas (orden_venta, desc_venta, fecha_reserva, estado_venta, factura_id, cliente_id, usuario_id) VALUES ('OV0000000004', 'Orden de venta concretado', '2023-03-18', 'PAGADO', 4, 8, 2);
+INSERT INTO ventas (orden_venta, desc_venta, fecha_reserva, estado_venta, factura_id, cliente_id, usuario_id) VALUES ('OV0000000005', 'Orden de venta concretado', '2023-01-04', 'PAGADO', 5, 10, 2);
+INSERT INTO ventas (orden_venta, desc_venta, fecha_reserva, estado_venta, factura_id, cliente_id, usuario_id) VALUES ('OV0000000006', 'Orden de venta concretado', '2023-01-05', 'PAGADO', 6, 7, 2);
+INSERT INTO ventas (orden_venta, desc_venta, fecha_reserva, estado_venta, factura_id, cliente_id, usuario_id) VALUES ('OV0000000007', 'Orden de venta concretado', '2023-02-08', 'PAGADO', 7, 9, 3);
+INSERT INTO ventas (orden_venta, desc_venta, fecha_reserva, estado_venta, factura_id, cliente_id, usuario_id) VALUES ('OV0000000008', 'Orden de venta concretado', '2023-01-04', 'PAGADO', 8, 1, 3);
+INSERT INTO ventas (orden_venta, desc_venta, fecha_reserva, estado_venta, factura_id, cliente_id, usuario_id) VALUES ('OV0000000009', 'Orden de venta concretado', '2023-03-16', 'PAGADO', 9, 2, 3);
+INSERT INTO ventas (orden_venta, desc_venta, fecha_reserva, estado_venta, factura_id, cliente_id, usuario_id) VALUES ('OV0000000010', 'Orden de venta concretado', '2023-03-20', 'PAGADO', 10, 3, 2);
 

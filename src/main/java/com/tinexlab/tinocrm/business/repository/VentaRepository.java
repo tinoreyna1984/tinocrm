@@ -14,6 +14,9 @@ public interface VentaRepository extends JpaRepository<Venta, Long> {
     Page<Venta> findByUser(User user, Pageable pageable);
     List<Venta> findByUser(User user);
 
-    @Query("SELECT MAX(v.id) + 1 FROM Venta v")
+    @Query(value = "SELECT AUTO_INCREMENT " +
+            "FROM information_schema.TABLES " +
+            "WHERE TABLE_SCHEMA = 'tinocrm' " +
+            "AND TABLE_NAME = 'facturas'", nativeQuery = true) // solo para MySQL, modificar para otra base de datos
     Long getNextId();
 }
