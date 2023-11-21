@@ -7,6 +7,355 @@
 	},
 	"item": [
 		{
+			"name": "Usuarios",
+			"item": [
+				{
+					"name": "GET - Usuarios",
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJsYXN0TmFtZSI6IkNSTSIsInJvbGUiOiJBRE1JTklTVFJBVE9SIiwicGVybWlzc2lvbnMiOlt7ImF1dGhvcml0eSI6IlNBVkVfT05FX1VTRVIifSx7ImF1dGhvcml0eSI6Ik1PRElGWV9PTkVfVVNFUiJ9LHsiYXV0aG9yaXR5IjoiREVMRVRFX09ORV9VU0VSIn0seyJhdXRob3JpdHkiOiJSRUFEX0FMTF9VU0VSUyJ9LHsiYXV0aG9yaXR5IjoiUk9MRV9BRE1JTklTVFJBVE9SIn1dLCJuYW1lIjoiQWRtaW5pc3RyYWRvciIsInVzZXJJZCI6MSwiZW1haWwiOiJhZG1pbkBtYWlsLmNvbSIsInN1YiI6ImFkbWluIiwiaWF0IjoxNjk5Mzg5NDYyLCJleHAiOjE2OTkzOTEyNjJ9.apjfDYFr04PLbAyUqIF7jMM3BG02ipyM-8TLzQ2lMWQ",
+									"type": "string"
+								}
+							]
+						},
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "http://localhost:4004/api/users",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "4004",
+							"path": [
+								"api",
+								"users"
+							]
+						}
+					},
+					"response": [
+						{
+							"name": "OK - 200",
+							"originalRequest": {
+								"method": "GET",
+								"header": [],
+								"url": {
+									"raw": "http://localhost:4004/api/users",
+									"protocol": "http",
+									"host": [
+										"localhost"
+									],
+									"port": "4004",
+									"path": [
+										"api",
+										"users"
+									]
+								}
+							},
+							"status": "OK",
+							"code": 200,
+							"_postman_previewlanguage": "json",
+							"header": [
+								{
+									"key": "Vary",
+									"value": "Origin"
+								},
+								{
+									"key": "Vary",
+									"value": "Access-Control-Request-Method"
+								},
+								{
+									"key": "Vary",
+									"value": "Access-Control-Request-Headers"
+								},
+								{
+									"key": "X-Content-Type-Options",
+									"value": "nosniff"
+								},
+								{
+									"key": "X-XSS-Protection",
+									"value": "0"
+								},
+								{
+									"key": "Cache-Control",
+									"value": "no-cache, no-store, max-age=0, must-revalidate"
+								},
+								{
+									"key": "Pragma",
+									"value": "no-cache"
+								},
+								{
+									"key": "Expires",
+									"value": "0"
+								},
+								{
+									"key": "X-Frame-Options",
+									"value": "DENY"
+								},
+								{
+									"key": "Content-Type",
+									"value": "application/json"
+								},
+								{
+									"key": "Transfer-Encoding",
+									"value": "chunked"
+								},
+								{
+									"key": "Date",
+									"value": "Mon, 23 Oct 2023 21:25:54 GMT"
+								},
+								{
+									"key": "Keep-Alive",
+									"value": "timeout=60"
+								},
+								{
+									"key": "Connection",
+									"value": "keep-alive"
+								}
+							],
+							"cookie": [],
+							"body": "[\n    {\n        \"id\": 1,\n        \"username\": \"admin\",\n        \"password\": \"$2a$10$XsgubHfexQtsv96lfIEca.9j2iEXjw7tmoODUfMeHmIrmX5HjrcX2\",\n        \"email\": \"admin@mail.com\",\n        \"name\": \"Administrador\",\n        \"lastName\": \"CRM\",\n        \"role\": \"ADMINISTRATOR\",\n        \"enabled\": true,\n        \"accountNonExpired\": true,\n        \"credentialsNonExpired\": true,\n        \"authorities\": [\n            {\n                \"authority\": \"SAVE_ONE_USER\"\n            },\n            {\n                \"authority\": \"MODIFY_ONE_USER\"\n            },\n            {\n                \"authority\": \"DELETE_ONE_USER\"\n            },\n            {\n                \"authority\": \"READ_ALL_USERS\"\n            },\n            {\n                \"authority\": \"ROLE_ADMINISTRATOR\"\n            }\n        ],\n        \"accountNonLocked\": true\n    },\n    {\n        \"id\": 2,\n        \"username\": \"treyna\",\n        \"password\": \"$2a$10$KL2sAlhxRz061nDYNI0nl.W7VvNKyh597OkKGPUOIDK5hXt7d9yu2\",\n        \"email\": \"treyna@mail.com\",\n        \"name\": \"Tino\",\n        \"lastName\": \"Reyna\",\n        \"role\": \"USER\",\n        \"enabled\": true,\n        \"accountNonExpired\": true,\n        \"credentialsNonExpired\": true,\n        \"authorities\": [\n            {\n                \"authority\": \"READ_ALL_USERS\"\n            },\n            {\n                \"authority\": \"ROLE_USER\"\n            }\n        ],\n        \"accountNonLocked\": true\n    },\n    {\n        \"id\": 3,\n        \"username\": \"glorentzen\",\n        \"password\": \"$2a$10$KL2sAlhxRz061nDYNI0nl.W7VvNKyh597OkKGPUOIDK5hXt7d9yu2\",\n        \"email\": \"glorentzen@mail.com\",\n        \"name\": \"Gabriela\",\n        \"lastName\": \"Lorentzen\",\n        \"role\": \"USER\",\n        \"enabled\": true,\n        \"accountNonExpired\": true,\n        \"credentialsNonExpired\": true,\n        \"authorities\": [\n            {\n                \"authority\": \"READ_ALL_USERS\"\n            },\n            {\n                \"authority\": \"ROLE_USER\"\n            }\n        ],\n        \"accountNonLocked\": true\n    }\n]"
+						}
+					]
+				},
+				{
+					"name": "GET - Usuario",
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJsYXN0TmFtZSI6IkNSTSIsInJvbGUiOiJBRE1JTklTVFJBVE9SIiwicGVybWlzc2lvbnMiOlt7ImF1dGhvcml0eSI6IlNBVkVfT05FX1VTRVIifSx7ImF1dGhvcml0eSI6Ik1PRElGWV9PTkVfVVNFUiJ9LHsiYXV0aG9yaXR5IjoiREVMRVRFX09ORV9VU0VSIn0seyJhdXRob3JpdHkiOiJSRUFEX0FMTF9VU0VSUyJ9LHsiYXV0aG9yaXR5IjoiUk9MRV9BRE1JTklTVFJBVE9SIn1dLCJuYW1lIjoiQWRtaW5pc3RyYWRvciIsInVzZXJJZCI6MSwiZW1haWwiOiJhZG1pbkBtYWlsLmNvbSIsInN1YiI6ImFkbWluIiwiaWF0IjoxNjk3OTMwODA4LCJleHAiOjE2OTc5MzI2MDh9.NYAZvOkEBtO-nKFMc8RD3n-qt97ojymK48hckLzTCoU",
+									"type": "string"
+								}
+							]
+						},
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "http://localhost:4004/api/users/3",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "4004",
+							"path": [
+								"api",
+								"users",
+								"3"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "POST- Login - USER",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"username\": \"treyna\",\r\n    \"password\": \"u$uari0CRM\"\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://localhost:4004/api/auth/authenticate",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "4004",
+							"path": [
+								"api",
+								"auth",
+								"authenticate"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "POST- Login - ADMINISTRATOR",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"username\": \"admin\",\r\n    \"password\": \"Tr20010878\"\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://localhost:4004/api/auth/authenticate",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "4004",
+							"path": [
+								"api",
+								"auth",
+								"authenticate"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "POST - Agregar Usuario",
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJyb2xlIjoiQURNSU5JU1RSQVRPUiIsInBlcm1pc3Npb25zIjpbeyJhdXRob3JpdHkiOiJTQVZFX09ORV9VU0VSIn0seyJhdXRob3JpdHkiOiJNT0RJRllfT05FX1VTRVIifSx7ImF1dGhvcml0eSI6IkRFTEVURV9PTkVfVVNFUiJ9LHsiYXV0aG9yaXR5IjoiUkVBRF9BTExfVVNFUlMifSx7ImF1dGhvcml0eSI6IlJPTEVfQURNSU5JU1RSQVRPUiJ9XSwibmFtZSI6IkFkbWluaXN0cmFkb3IiLCJzdWIiOiJhZG1pbiIsImlhdCI6MTY5NjQ4NjkyNiwiZXhwIjoxNjk2NDg4NzI2fQ.5wKwRFuNxsjX5ZI6_5rrfhMjQEttDQoOnx-5nNXNfO0",
+									"type": "string"
+								}
+							]
+						},
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"name\": \"Usuario\",\r\n    \"lastName\": \"Dos\",\r\n    \"username\": \"udos\",\r\n    \"password\": \"clave123\",\r\n    \"email\": \"udos@mail.com\"\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://localhost:4004/api/users",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "4004",
+							"path": [
+								"api",
+								"users"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "DELETE - Borrar Usuario",
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJyb2xlIjoiQURNSU5JU1RSQVRPUiIsInBlcm1pc3Npb25zIjpbeyJhdXRob3JpdHkiOiJTQVZFX09ORV9VU0VSIn0seyJhdXRob3JpdHkiOiJNT0RJRllfT05FX1VTRVIifSx7ImF1dGhvcml0eSI6IkRFTEVURV9PTkVfVVNFUiJ9LHsiYXV0aG9yaXR5IjoiUkVBRF9BTExfVVNFUlMifSx7ImF1dGhvcml0eSI6IlJPTEVfQURNSU5JU1RSQVRPUiJ9XSwibmFtZSI6IkFkbWluaXN0cmFkb3IiLCJzdWIiOiJhZG1pbiIsImlhdCI6MTY5NjM1MTU2NCwiZXhwIjoxNjk2MzUzMzY0fQ.USBtL__l46wV163kRPKVyV6J6Jq2obMOZKligMfA-9E",
+									"type": "string"
+								}
+							]
+						},
+						"method": "DELETE",
+						"header": [],
+						"url": {
+							"raw": "http://localhost:4004/api/users/3",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "4004",
+							"path": [
+								"api",
+								"users",
+								"3"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "PUT - Modificar Usuario",
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJyb2xlIjoiQURNSU5JU1RSQVRPUiIsInBlcm1pc3Npb25zIjpbeyJhdXRob3JpdHkiOiJTQVZFX09ORV9VU0VSIn0seyJhdXRob3JpdHkiOiJNT0RJRllfT05FX1VTRVIifSx7ImF1dGhvcml0eSI6IkRFTEVURV9PTkVfVVNFUiJ9LHsiYXV0aG9yaXR5IjoiUkVBRF9BTExfVVNFUlMifSx7ImF1dGhvcml0eSI6IlJPTEVfQURNSU5JU1RSQVRPUiJ9XSwibmFtZSI6IkFkbWluaXN0cmFkb3IiLCJzdWIiOiJhZG1pbiIsImlhdCI6MTY5NjM1MzE3MCwiZXhwIjoxNjk2MzU0OTcwfQ.l9bmG4sWOq5Y9VZzk85QZwo6A7Zcm7bUG71Z2XgB34c",
+									"type": "string"
+								}
+							]
+						},
+						"method": "PUT",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"name\": \"Pepe\",\r\n    \"lastName\": \"Trueno\",\r\n    \"username\": \"ptrueno\",\r\n    \"password\": \"clave456\",\r\n    \"email\": \"ptrueno@mail.com\"\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://localhost:4004/api/users/3",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "4004",
+							"path": [
+								"api",
+								"users",
+								"3"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "POST - Registrar Usuario",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"name\": \"Usuario\",\r\n    \"lastName\": \"Dos\",\r\n    \"username\": \"udos\",\r\n    \"password\": \"clave123\",\r\n    \"email\": \"udos@mail.com\"\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://localhost:4004/api/auth/register",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "4004",
+							"path": [
+								"api",
+								"auth",
+								"register"
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		},
+		{
 			"name": "Clientes",
 			"item": [
 				{
@@ -193,7 +542,7 @@
 							"bearer": [
 								{
 									"key": "token",
-									"value": "eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJsYXN0TmFtZSI6IlJleW5hIiwicm9sZSI6IlVTRVIiLCJwZXJtaXNzaW9ucyI6W3siYXV0aG9yaXR5IjoiUkVBRF9BTExfVVNFUlMifSx7ImF1dGhvcml0eSI6IlJPTEVfVVNFUiJ9XSwibmFtZSI6IlRpbm8iLCJ1c2VySWQiOjIsImVtYWlsIjoidHJleW5hQG1haWwuY29tIiwic3ViIjoidHJleW5hIiwiaWF0IjoxNjk4MTA3MzUwLCJleHAiOjE2OTgxMDkxNTB9.L5B-TMh5XbmESL1i0SI7vzL_NdOXIg4E-eMMKGe-2ys",
+									"value": "eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJsYXN0TmFtZSI6IlJleW5hIiwicm9sZSI6IlVTRVIiLCJwZXJtaXNzaW9ucyI6W3siYXV0aG9yaXR5IjoiUkVBRF9BTExfVVNFUlMifSx7ImF1dGhvcml0eSI6IlJPTEVfVVNFUiJ9XSwibmFtZSI6IlRpbm8iLCJ1c2VySWQiOjIsImVtYWlsIjoidHJleW5hQG1haWwuY29tIiwic3ViIjoidHJleW5hIiwiaWF0IjoxNzAwMjc2Mzk5LCJleHAiOjE3MDAyNzgxOTl9.ZOr9BJqJFcq0E9274MLmoybkpBP00zjCjzPfzYmKvsI",
 									"type": "string"
 								}
 							]
@@ -224,7 +573,7 @@
 							"bearer": [
 								{
 									"key": "token",
-									"value": "eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJsYXN0TmFtZSI6IlJleW5hIiwicm9sZSI6IlVTRVIiLCJwZXJtaXNzaW9ucyI6W3siYXV0aG9yaXR5IjoiUkVBRF9BTExfVVNFUlMifSx7ImF1dGhvcml0eSI6IlJPTEVfVVNFUiJ9XSwibmFtZSI6IlRpbm8iLCJ1c2VySWQiOjIsImVtYWlsIjoidHJleW5hQG1haWwuY29tIiwic3ViIjoidHJleW5hIiwiaWF0IjoxNjk4MTA4MDc3LCJleHAiOjE2OTgxMDk4Nzd9.rXEkVJ9UD09v3kdzF3dJ5GJfbh9eH7f0iWsvWI_ivmw",
+									"value": "eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJsYXN0TmFtZSI6IlJleW5hIiwicm9sZSI6IlVTRVIiLCJwZXJtaXNzaW9ucyI6W3siYXV0aG9yaXR5IjoiUkVBRF9BTExfVVNFUlMifSx7ImF1dGhvcml0eSI6IlJPTEVfVVNFUiJ9XSwibmFtZSI6IlRpbm8iLCJ1c2VySWQiOjIsImVtYWlsIjoidHJleW5hQG1haWwuY29tIiwic3ViIjoidHJleW5hIiwiaWF0IjoxNzAwMjc2Mzk5LCJleHAiOjE3MDAyNzgxOTl9.ZOr9BJqJFcq0E9274MLmoybkpBP00zjCjzPfzYmKvsI",
 									"type": "string"
 								}
 							]
@@ -602,355 +951,6 @@
 			]
 		},
 		{
-			"name": "Usuarios",
-			"item": [
-				{
-					"name": "GET - Usuarios",
-					"request": {
-						"auth": {
-							"type": "bearer",
-							"bearer": [
-								{
-									"key": "token",
-									"value": "eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJsYXN0TmFtZSI6IkNSTSIsInJvbGUiOiJBRE1JTklTVFJBVE9SIiwicGVybWlzc2lvbnMiOlt7ImF1dGhvcml0eSI6IlNBVkVfT05FX1VTRVIifSx7ImF1dGhvcml0eSI6Ik1PRElGWV9PTkVfVVNFUiJ9LHsiYXV0aG9yaXR5IjoiREVMRVRFX09ORV9VU0VSIn0seyJhdXRob3JpdHkiOiJSRUFEX0FMTF9VU0VSUyJ9LHsiYXV0aG9yaXR5IjoiUk9MRV9BRE1JTklTVFJBVE9SIn1dLCJuYW1lIjoiQWRtaW5pc3RyYWRvciIsInVzZXJJZCI6MSwiZW1haWwiOiJhZG1pbkBtYWlsLmNvbSIsInN1YiI6ImFkbWluIiwiaWF0IjoxNjk4MDk2MjQyLCJleHAiOjE2OTgwOTgwNDJ9.PVWiNLsaE8j2dtcl_QkRsVOi0heGQyHu1A0njNbFnNE",
-									"type": "string"
-								}
-							]
-						},
-						"method": "GET",
-						"header": [],
-						"url": {
-							"raw": "http://localhost:4004/api/users",
-							"protocol": "http",
-							"host": [
-								"localhost"
-							],
-							"port": "4004",
-							"path": [
-								"api",
-								"users"
-							]
-						}
-					},
-					"response": [
-						{
-							"name": "OK - 200",
-							"originalRequest": {
-								"method": "GET",
-								"header": [],
-								"url": {
-									"raw": "http://localhost:4004/api/users",
-									"protocol": "http",
-									"host": [
-										"localhost"
-									],
-									"port": "4004",
-									"path": [
-										"api",
-										"users"
-									]
-								}
-							},
-							"status": "OK",
-							"code": 200,
-							"_postman_previewlanguage": "json",
-							"header": [
-								{
-									"key": "Vary",
-									"value": "Origin"
-								},
-								{
-									"key": "Vary",
-									"value": "Access-Control-Request-Method"
-								},
-								{
-									"key": "Vary",
-									"value": "Access-Control-Request-Headers"
-								},
-								{
-									"key": "X-Content-Type-Options",
-									"value": "nosniff"
-								},
-								{
-									"key": "X-XSS-Protection",
-									"value": "0"
-								},
-								{
-									"key": "Cache-Control",
-									"value": "no-cache, no-store, max-age=0, must-revalidate"
-								},
-								{
-									"key": "Pragma",
-									"value": "no-cache"
-								},
-								{
-									"key": "Expires",
-									"value": "0"
-								},
-								{
-									"key": "X-Frame-Options",
-									"value": "DENY"
-								},
-								{
-									"key": "Content-Type",
-									"value": "application/json"
-								},
-								{
-									"key": "Transfer-Encoding",
-									"value": "chunked"
-								},
-								{
-									"key": "Date",
-									"value": "Mon, 23 Oct 2023 21:25:54 GMT"
-								},
-								{
-									"key": "Keep-Alive",
-									"value": "timeout=60"
-								},
-								{
-									"key": "Connection",
-									"value": "keep-alive"
-								}
-							],
-							"cookie": [],
-							"body": "[\n    {\n        \"id\": 1,\n        \"username\": \"admin\",\n        \"password\": \"$2a$10$XsgubHfexQtsv96lfIEca.9j2iEXjw7tmoODUfMeHmIrmX5HjrcX2\",\n        \"email\": \"admin@mail.com\",\n        \"name\": \"Administrador\",\n        \"lastName\": \"CRM\",\n        \"role\": \"ADMINISTRATOR\",\n        \"enabled\": true,\n        \"accountNonExpired\": true,\n        \"credentialsNonExpired\": true,\n        \"authorities\": [\n            {\n                \"authority\": \"SAVE_ONE_USER\"\n            },\n            {\n                \"authority\": \"MODIFY_ONE_USER\"\n            },\n            {\n                \"authority\": \"DELETE_ONE_USER\"\n            },\n            {\n                \"authority\": \"READ_ALL_USERS\"\n            },\n            {\n                \"authority\": \"ROLE_ADMINISTRATOR\"\n            }\n        ],\n        \"accountNonLocked\": true\n    },\n    {\n        \"id\": 2,\n        \"username\": \"treyna\",\n        \"password\": \"$2a$10$KL2sAlhxRz061nDYNI0nl.W7VvNKyh597OkKGPUOIDK5hXt7d9yu2\",\n        \"email\": \"treyna@mail.com\",\n        \"name\": \"Tino\",\n        \"lastName\": \"Reyna\",\n        \"role\": \"USER\",\n        \"enabled\": true,\n        \"accountNonExpired\": true,\n        \"credentialsNonExpired\": true,\n        \"authorities\": [\n            {\n                \"authority\": \"READ_ALL_USERS\"\n            },\n            {\n                \"authority\": \"ROLE_USER\"\n            }\n        ],\n        \"accountNonLocked\": true\n    },\n    {\n        \"id\": 3,\n        \"username\": \"glorentzen\",\n        \"password\": \"$2a$10$KL2sAlhxRz061nDYNI0nl.W7VvNKyh597OkKGPUOIDK5hXt7d9yu2\",\n        \"email\": \"glorentzen@mail.com\",\n        \"name\": \"Gabriela\",\n        \"lastName\": \"Lorentzen\",\n        \"role\": \"USER\",\n        \"enabled\": true,\n        \"accountNonExpired\": true,\n        \"credentialsNonExpired\": true,\n        \"authorities\": [\n            {\n                \"authority\": \"READ_ALL_USERS\"\n            },\n            {\n                \"authority\": \"ROLE_USER\"\n            }\n        ],\n        \"accountNonLocked\": true\n    }\n]"
-						}
-					]
-				},
-				{
-					"name": "GET - Usuario",
-					"request": {
-						"auth": {
-							"type": "bearer",
-							"bearer": [
-								{
-									"key": "token",
-									"value": "eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJsYXN0TmFtZSI6IkNSTSIsInJvbGUiOiJBRE1JTklTVFJBVE9SIiwicGVybWlzc2lvbnMiOlt7ImF1dGhvcml0eSI6IlNBVkVfT05FX1VTRVIifSx7ImF1dGhvcml0eSI6Ik1PRElGWV9PTkVfVVNFUiJ9LHsiYXV0aG9yaXR5IjoiREVMRVRFX09ORV9VU0VSIn0seyJhdXRob3JpdHkiOiJSRUFEX0FMTF9VU0VSUyJ9LHsiYXV0aG9yaXR5IjoiUk9MRV9BRE1JTklTVFJBVE9SIn1dLCJuYW1lIjoiQWRtaW5pc3RyYWRvciIsInVzZXJJZCI6MSwiZW1haWwiOiJhZG1pbkBtYWlsLmNvbSIsInN1YiI6ImFkbWluIiwiaWF0IjoxNjk3OTMwODA4LCJleHAiOjE2OTc5MzI2MDh9.NYAZvOkEBtO-nKFMc8RD3n-qt97ojymK48hckLzTCoU",
-									"type": "string"
-								}
-							]
-						},
-						"method": "GET",
-						"header": [],
-						"url": {
-							"raw": "http://localhost:4004/api/users/3",
-							"protocol": "http",
-							"host": [
-								"localhost"
-							],
-							"port": "4004",
-							"path": [
-								"api",
-								"users",
-								"3"
-							]
-						}
-					},
-					"response": []
-				},
-				{
-					"name": "POST- Login - USER",
-					"request": {
-						"method": "POST",
-						"header": [],
-						"body": {
-							"mode": "raw",
-							"raw": "{\r\n    \"username\": \"treyna\",\r\n    \"password\": \"u$uari0CRM\"\r\n}",
-							"options": {
-								"raw": {
-									"language": "json"
-								}
-							}
-						},
-						"url": {
-							"raw": "http://localhost:4004/api/auth/authenticate",
-							"protocol": "http",
-							"host": [
-								"localhost"
-							],
-							"port": "4004",
-							"path": [
-								"api",
-								"auth",
-								"authenticate"
-							]
-						}
-					},
-					"response": []
-				},
-				{
-					"name": "POST- Login - ADMINISTRATOR",
-					"request": {
-						"method": "POST",
-						"header": [],
-						"body": {
-							"mode": "raw",
-							"raw": "{\r\n    \"username\": \"admin\",\r\n    \"password\": \"Tr20010878\"\r\n}",
-							"options": {
-								"raw": {
-									"language": "json"
-								}
-							}
-						},
-						"url": {
-							"raw": "http://localhost:4004/api/auth/authenticate",
-							"protocol": "http",
-							"host": [
-								"localhost"
-							],
-							"port": "4004",
-							"path": [
-								"api",
-								"auth",
-								"authenticate"
-							]
-						}
-					},
-					"response": []
-				},
-				{
-					"name": "POST - Agregar Usuario",
-					"request": {
-						"auth": {
-							"type": "bearer",
-							"bearer": [
-								{
-									"key": "token",
-									"value": "eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJyb2xlIjoiQURNSU5JU1RSQVRPUiIsInBlcm1pc3Npb25zIjpbeyJhdXRob3JpdHkiOiJTQVZFX09ORV9VU0VSIn0seyJhdXRob3JpdHkiOiJNT0RJRllfT05FX1VTRVIifSx7ImF1dGhvcml0eSI6IkRFTEVURV9PTkVfVVNFUiJ9LHsiYXV0aG9yaXR5IjoiUkVBRF9BTExfVVNFUlMifSx7ImF1dGhvcml0eSI6IlJPTEVfQURNSU5JU1RSQVRPUiJ9XSwibmFtZSI6IkFkbWluaXN0cmFkb3IiLCJzdWIiOiJhZG1pbiIsImlhdCI6MTY5NjQ4NjkyNiwiZXhwIjoxNjk2NDg4NzI2fQ.5wKwRFuNxsjX5ZI6_5rrfhMjQEttDQoOnx-5nNXNfO0",
-									"type": "string"
-								}
-							]
-						},
-						"method": "POST",
-						"header": [],
-						"body": {
-							"mode": "raw",
-							"raw": "{\r\n    \"name\": \"Usuario\",\r\n    \"lastName\": \"Dos\",\r\n    \"username\": \"udos\",\r\n    \"password\": \"clave123\",\r\n    \"email\": \"udos@mail.com\"\r\n}",
-							"options": {
-								"raw": {
-									"language": "json"
-								}
-							}
-						},
-						"url": {
-							"raw": "http://localhost:4004/api/users",
-							"protocol": "http",
-							"host": [
-								"localhost"
-							],
-							"port": "4004",
-							"path": [
-								"api",
-								"users"
-							]
-						}
-					},
-					"response": []
-				},
-				{
-					"name": "DELETE - Borrar Usuario",
-					"request": {
-						"auth": {
-							"type": "bearer",
-							"bearer": [
-								{
-									"key": "token",
-									"value": "eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJyb2xlIjoiQURNSU5JU1RSQVRPUiIsInBlcm1pc3Npb25zIjpbeyJhdXRob3JpdHkiOiJTQVZFX09ORV9VU0VSIn0seyJhdXRob3JpdHkiOiJNT0RJRllfT05FX1VTRVIifSx7ImF1dGhvcml0eSI6IkRFTEVURV9PTkVfVVNFUiJ9LHsiYXV0aG9yaXR5IjoiUkVBRF9BTExfVVNFUlMifSx7ImF1dGhvcml0eSI6IlJPTEVfQURNSU5JU1RSQVRPUiJ9XSwibmFtZSI6IkFkbWluaXN0cmFkb3IiLCJzdWIiOiJhZG1pbiIsImlhdCI6MTY5NjM1MTU2NCwiZXhwIjoxNjk2MzUzMzY0fQ.USBtL__l46wV163kRPKVyV6J6Jq2obMOZKligMfA-9E",
-									"type": "string"
-								}
-							]
-						},
-						"method": "DELETE",
-						"header": [],
-						"url": {
-							"raw": "http://localhost:4004/api/users/3",
-							"protocol": "http",
-							"host": [
-								"localhost"
-							],
-							"port": "4004",
-							"path": [
-								"api",
-								"users",
-								"3"
-							]
-						}
-					},
-					"response": []
-				},
-				{
-					"name": "PUT - Modificar Usuario",
-					"request": {
-						"auth": {
-							"type": "bearer",
-							"bearer": [
-								{
-									"key": "token",
-									"value": "eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJyb2xlIjoiQURNSU5JU1RSQVRPUiIsInBlcm1pc3Npb25zIjpbeyJhdXRob3JpdHkiOiJTQVZFX09ORV9VU0VSIn0seyJhdXRob3JpdHkiOiJNT0RJRllfT05FX1VTRVIifSx7ImF1dGhvcml0eSI6IkRFTEVURV9PTkVfVVNFUiJ9LHsiYXV0aG9yaXR5IjoiUkVBRF9BTExfVVNFUlMifSx7ImF1dGhvcml0eSI6IlJPTEVfQURNSU5JU1RSQVRPUiJ9XSwibmFtZSI6IkFkbWluaXN0cmFkb3IiLCJzdWIiOiJhZG1pbiIsImlhdCI6MTY5NjM1MzE3MCwiZXhwIjoxNjk2MzU0OTcwfQ.l9bmG4sWOq5Y9VZzk85QZwo6A7Zcm7bUG71Z2XgB34c",
-									"type": "string"
-								}
-							]
-						},
-						"method": "PUT",
-						"header": [],
-						"body": {
-							"mode": "raw",
-							"raw": "{\r\n    \"name\": \"Pepe\",\r\n    \"lastName\": \"Trueno\",\r\n    \"username\": \"ptrueno\",\r\n    \"password\": \"clave456\",\r\n    \"email\": \"ptrueno@mail.com\"\r\n}",
-							"options": {
-								"raw": {
-									"language": "json"
-								}
-							}
-						},
-						"url": {
-							"raw": "http://localhost:4004/api/users/3",
-							"protocol": "http",
-							"host": [
-								"localhost"
-							],
-							"port": "4004",
-							"path": [
-								"api",
-								"users",
-								"3"
-							]
-						}
-					},
-					"response": []
-				},
-				{
-					"name": "POST - Registrar Usuario",
-					"request": {
-						"method": "POST",
-						"header": [],
-						"body": {
-							"mode": "raw",
-							"raw": "{\r\n    \"name\": \"Usuario\",\r\n    \"lastName\": \"Dos\",\r\n    \"username\": \"udos\",\r\n    \"password\": \"clave123\",\r\n    \"email\": \"udos@mail.com\"\r\n}",
-							"options": {
-								"raw": {
-									"language": "json"
-								}
-							}
-						},
-						"url": {
-							"raw": "http://localhost:4004/api/auth/register",
-							"protocol": "http",
-							"host": [
-								"localhost"
-							],
-							"port": "4004",
-							"path": [
-								"api",
-								"auth",
-								"register"
-							]
-						}
-					},
-					"response": []
-				}
-			]
-		},
-		{
 			"name": "Ventas",
 			"item": [
 				{
@@ -961,7 +961,7 @@
 							"bearer": [
 								{
 									"key": "token",
-									"value": "eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJsYXN0TmFtZSI6IlJleW5hIiwicm9sZSI6IlVTRVIiLCJwZXJtaXNzaW9ucyI6W3siYXV0aG9yaXR5IjoiUkVBRF9BTExfVVNFUlMifSx7ImF1dGhvcml0eSI6IlJPTEVfVVNFUiJ9XSwibmFtZSI6IlRpbm8iLCJ1c2VySWQiOjIsImVtYWlsIjoidHJleW5hQG1haWwuY29tIiwic3ViIjoidHJleW5hIiwiaWF0IjoxNjk4MDk3NTEyLCJleHAiOjE2OTgwOTkzMTJ9.iZhIbYodoIG-Fn2rhW3kGn8LE3whHcAZ6b9PGU18Rk4",
+									"value": "eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJsYXN0TmFtZSI6IlJleW5hIiwicm9sZSI6IlVTRVIiLCJwZXJtaXNzaW9ucyI6W3siYXV0aG9yaXR5IjoiUkVBRF9BTExfVVNFUlMifSx7ImF1dGhvcml0eSI6IlJPTEVfVVNFUiJ9XSwibmFtZSI6IlRpbm8iLCJ1c2VySWQiOjIsImVtYWlsIjoidHJleW5hQG1haWwuY29tIiwic3ViIjoidHJleW5hIiwiaWF0IjoxNzAwMjY1ODAxLCJleHAiOjE3MDAyNjc2MDF9.eg2vRxAw6l8zofKxFobdf-17qmwrRUAR9e5uQ6OXKKQ",
 									"type": "string"
 								}
 							]
@@ -991,7 +991,7 @@
 							"bearer": [
 								{
 									"key": "token",
-									"value": "eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJsYXN0TmFtZSI6IkNSTSIsInJvbGUiOiJBRE1JTklTVFJBVE9SIiwicGVybWlzc2lvbnMiOlt7ImF1dGhvcml0eSI6IlNBVkVfT05FX1VTRVIifSx7ImF1dGhvcml0eSI6Ik1PRElGWV9PTkVfVVNFUiJ9LHsiYXV0aG9yaXR5IjoiREVMRVRFX09ORV9VU0VSIn0seyJhdXRob3JpdHkiOiJSRUFEX0FMTF9VU0VSUyJ9LHsiYXV0aG9yaXR5IjoiUk9MRV9BRE1JTklTVFJBVE9SIn1dLCJuYW1lIjoiQWRtaW5pc3RyYWRvciIsInVzZXJJZCI6MSwiZW1haWwiOiJhZG1pbkBtYWlsLmNvbSIsInN1YiI6ImFkbWluIiwiaWF0IjoxNjk3MjYzNzE4LCJleHAiOjE2OTcyNjU1MTh9.pUMOOqJDnbZFzXsWu1jcOj6I68XNl2_oNtrxMffsErU",
+									"value": "eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJsYXN0TmFtZSI6IlJleW5hIiwicm9sZSI6IlVTRVIiLCJwZXJtaXNzaW9ucyI6W3siYXV0aG9yaXR5IjoiUkVBRF9BTExfVVNFUlMifSx7ImF1dGhvcml0eSI6IlJPTEVfVVNFUiJ9XSwibmFtZSI6IlRpbm8iLCJ1c2VySWQiOjIsImVtYWlsIjoidHJleW5hQG1haWwuY29tIiwic3ViIjoidHJleW5hIiwiaWF0IjoxNzAwMjY1ODAxLCJleHAiOjE3MDAyNjc2MDF9.eg2vRxAw6l8zofKxFobdf-17qmwrRUAR9e5uQ6OXKKQ",
 									"type": "string"
 								}
 							]
@@ -1009,6 +1009,61 @@
 								"api",
 								"ventas",
 								"1"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "GET - Siguiente ID de venta",
+					"event": [
+						{
+							"listen": "test",
+							"script": {
+								"exec": [
+									"var template = `\r",
+									"<div>\r",
+									"    <h1>Error</h1>\r",
+									"    <p>{{response.error}}</p>\r",
+									"</div>\r",
+									"`;\r",
+									"\r",
+									"function constructVisualizerPayload() {\r",
+									"    var res = pm.response.json();\r",
+									"    \r",
+									"    return {response: res};\r",
+									"}\r",
+									"\r",
+									"pm.visualizer.set(template, constructVisualizerPayload());"
+								],
+								"type": "text/javascript"
+							}
+						}
+					],
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJsYXN0TmFtZSI6IlJleW5hIiwicm9sZSI6IlVTRVIiLCJwZXJtaXNzaW9ucyI6W3siYXV0aG9yaXR5IjoiUkVBRF9BTExfVVNFUlMifSx7ImF1dGhvcml0eSI6IlJPTEVfVVNFUiJ9XSwibmFtZSI6IlRpbm8iLCJ1c2VySWQiOjIsImVtYWlsIjoidHJleW5hQG1haWwuY29tIiwic3ViIjoidHJleW5hIiwiaWF0IjoxNzAwNDU4MzM3LCJleHAiOjE3MDA0NjAxMzd9.mdAWO6rcYcJnVunLaNSgRPc1CWNNB2dd-7S9JPpyNhA",
+									"type": "string"
+								}
+							]
+						},
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "http://localhost:4004/api/ventas/next-id-venta",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "4004",
+							"path": [
+								"api",
+								"ventas",
+								"next-id-venta"
 							]
 						}
 					},
@@ -1053,7 +1108,7 @@
 							"bearer": [
 								{
 									"key": "token",
-									"value": "eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJyb2xlIjoiQURNSU5JU1RSQVRPUiIsInBlcm1pc3Npb25zIjpbeyJhdXRob3JpdHkiOiJTQVZFX09ORV9VU0VSIn0seyJhdXRob3JpdHkiOiJNT0RJRllfT05FX1VTRVIifSx7ImF1dGhvcml0eSI6IkRFTEVURV9PTkVfVVNFUiJ9LHsiYXV0aG9yaXR5IjoiUkVBRF9BTExfVVNFUlMifSx7ImF1dGhvcml0eSI6IlJPTEVfQURNSU5JU1RSQVRPUiJ9XSwibmFtZSI6IkFkbWluaXN0cmFkb3IiLCJzdWIiOiJhZG1pbiIsImlhdCI6MTY5NjU3MzcxMSwiZXhwIjoxNjk2NTc1NTExfQ.br-WfxUY654q23x1vOCXJ6gW5ibD1Qqkoq6QVa_Z6J0",
+									"value": "eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJsYXN0TmFtZSI6IlJleW5hIiwicm9sZSI6IlVTRVIiLCJwZXJtaXNzaW9ucyI6W3siYXV0aG9yaXR5IjoiUkVBRF9BTExfVVNFUlMifSx7ImF1dGhvcml0eSI6IlJPTEVfVVNFUiJ9XSwibmFtZSI6IlRpbm8iLCJ1c2VySWQiOjIsImVtYWlsIjoidHJleW5hQG1haWwuY29tIiwic3ViIjoidHJleW5hIiwiaWF0IjoxNzAwMjY1ODAxLCJleHAiOjE3MDAyNjc2MDF9.eg2vRxAw6l8zofKxFobdf-17qmwrRUAR9e5uQ6OXKKQ",
 									"type": "string"
 								}
 							]
@@ -1062,7 +1117,7 @@
 						"header": [],
 						"body": {
 							"mode": "raw",
-							"raw": "{\r\n\t\"ordenVenta\": \"OV0000000004\",\r\n\t\"descVenta\": \"Venta del Hyundai Tucson 2024\",\r\n\t\"estadoVenta\": \"CIERRE_GANADO\",\r\n\t\"fechaReserva\": \"2023-10-05 05:00\",\r\n\t\"clienteId\": 2,\r\n\t\"facturaId\": 4,\r\n\t\"userId\": 3\r\n}",
+							"raw": "{\r\n\t\"ordenVenta\": \"OV0000000004\",\r\n\t\"descVenta\": \"Venta del Hyundai Tucson 2024\",\r\n\t\"estadoVenta\": \"CIERRE_GANADO\",\r\n\t\"fechaReserva\": \"2023-10-05 05:00\",\r\n\t\"clienteId\": 4,\r\n\t\"facturaId\": 2,\r\n\t\"userId\": 3\r\n}",
 							"options": {
 								"raw": {
 									"language": "json"
@@ -1092,7 +1147,7 @@
 							"bearer": [
 								{
 									"key": "token",
-									"value": "eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJyb2xlIjoiQURNSU5JU1RSQVRPUiIsInBlcm1pc3Npb25zIjpbeyJhdXRob3JpdHkiOiJTQVZFX09ORV9VU0VSIn0seyJhdXRob3JpdHkiOiJNT0RJRllfT05FX1VTRVIifSx7ImF1dGhvcml0eSI6IkRFTEVURV9PTkVfVVNFUiJ9LHsiYXV0aG9yaXR5IjoiUkVBRF9BTExfVVNFUlMifSx7ImF1dGhvcml0eSI6IlJPTEVfQURNSU5JU1RSQVRPUiJ9XSwibmFtZSI6IkFkbWluaXN0cmFkb3IiLCJzdWIiOiJhZG1pbiIsImlhdCI6MTY5NjU3MzcxMSwiZXhwIjoxNjk2NTc1NTExfQ.br-WfxUY654q23x1vOCXJ6gW5ibD1Qqkoq6QVa_Z6J0",
+									"value": "eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJsYXN0TmFtZSI6IlJleW5hIiwicm9sZSI6IlVTRVIiLCJwZXJtaXNzaW9ucyI6W3siYXV0aG9yaXR5IjoiUkVBRF9BTExfVVNFUlMifSx7ImF1dGhvcml0eSI6IlJPTEVfVVNFUiJ9XSwibmFtZSI6IlRpbm8iLCJ1c2VySWQiOjIsImVtYWlsIjoidHJleW5hQG1haWwuY29tIiwic3ViIjoidHJleW5hIiwiaWF0IjoxNzAwMjY1ODAxLCJleHAiOjE3MDAyNjc2MDF9.eg2vRxAw6l8zofKxFobdf-17qmwrRUAR9e5uQ6OXKKQ",
 									"type": "string"
 								}
 							]
@@ -1123,6 +1178,112 @@
 						}
 					},
 					"response": []
+				}
+			]
+		},
+		{
+			"name": "Export",
+			"item": [
+				{
+					"name": "XLS",
+					"item": [
+						{
+							"name": "Clientes",
+							"request": {
+								"auth": {
+									"type": "bearer",
+									"bearer": [
+										{
+											"key": "token",
+											"value": "eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJsYXN0TmFtZSI6IlJleW5hIiwicm9sZSI6IlVTRVIiLCJwZXJtaXNzaW9ucyI6W3siYXV0aG9yaXR5IjoiUkVBRF9BTExfVVNFUlMifSx7ImF1dGhvcml0eSI6IlJPTEVfVVNFUiJ9XSwibmFtZSI6IlRpbm8iLCJ1c2VySWQiOjIsImVtYWlsIjoidHJleW5hQG1haWwuY29tIiwic3ViIjoidHJleW5hIiwiaWF0IjoxNzAwNTQwNjEwLCJleHAiOjE3MDA1NDI0MTB9.FUxyobrqr3WFmgXTYiDUjRvtzNu1AulyWdZ_A2L_hfc",
+											"type": "string"
+										}
+									]
+								},
+								"method": "GET",
+								"header": [],
+								"url": {
+									"raw": "http://localhost:4004/api/export/xls/clientes",
+									"protocol": "http",
+									"host": [
+										"localhost"
+									],
+									"port": "4004",
+									"path": [
+										"api",
+										"export",
+										"xls",
+										"clientes"
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "Ventas",
+							"request": {
+								"auth": {
+									"type": "bearer",
+									"bearer": [
+										{
+											"key": "token",
+											"value": "eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJsYXN0TmFtZSI6IlJleW5hIiwicm9sZSI6IlVTRVIiLCJwZXJtaXNzaW9ucyI6W3siYXV0aG9yaXR5IjoiUkVBRF9BTExfVVNFUlMifSx7ImF1dGhvcml0eSI6IlJPTEVfVVNFUiJ9XSwibmFtZSI6IlRpbm8iLCJ1c2VySWQiOjIsImVtYWlsIjoidHJleW5hQG1haWwuY29tIiwic3ViIjoidHJleW5hIiwiaWF0IjoxNzAwNTQwNjEwLCJleHAiOjE3MDA1NDI0MTB9.FUxyobrqr3WFmgXTYiDUjRvtzNu1AulyWdZ_A2L_hfc",
+											"type": "string"
+										}
+									]
+								},
+								"method": "GET",
+								"header": [],
+								"url": {
+									"raw": "http://localhost:4004/api/export/xls/ventas",
+									"protocol": "http",
+									"host": [
+										"localhost"
+									],
+									"port": "4004",
+									"path": [
+										"api",
+										"export",
+										"xls",
+										"ventas"
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "Productos",
+							"request": {
+								"auth": {
+									"type": "bearer",
+									"bearer": [
+										{
+											"key": "token",
+											"value": "eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJsYXN0TmFtZSI6IlJleW5hIiwicm9sZSI6IlVTRVIiLCJwZXJtaXNzaW9ucyI6W3siYXV0aG9yaXR5IjoiUkVBRF9BTExfVVNFUlMifSx7ImF1dGhvcml0eSI6IlJPTEVfVVNFUiJ9XSwibmFtZSI6IlRpbm8iLCJ1c2VySWQiOjIsImVtYWlsIjoidHJleW5hQG1haWwuY29tIiwic3ViIjoidHJleW5hIiwiaWF0IjoxNzAwNTQwOTg2LCJleHAiOjE3MDA1NDI3ODZ9.WLRAmgrJZ3MT694w1Sudctt5ThxvG1hObPwRsa8wfNk",
+											"type": "string"
+										}
+									]
+								},
+								"method": "GET",
+								"header": [],
+								"url": {
+									"raw": "http://localhost:4004/api/export/xls/productos",
+									"protocol": "http",
+									"host": [
+										"localhost"
+									],
+									"port": "4004",
+									"path": [
+										"api",
+										"export",
+										"xls",
+										"productos"
+									]
+								}
+							},
+							"response": []
+						}
+					]
 				}
 			]
 		}

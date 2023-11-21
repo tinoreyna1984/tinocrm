@@ -47,4 +47,8 @@ public class Factura {
     @JsonProperty(access = JsonProperty.Access.READ_ONLY) // previene la validación innecesaria del Content-Type
     private Venta venta;
 
+    @Override
+    public String toString() {
+        return "Cód. Factura: " + this.codFactura + ", pagado el " + this.fechaPago.toString() + " con " + this.formaPago;
+    }
 }

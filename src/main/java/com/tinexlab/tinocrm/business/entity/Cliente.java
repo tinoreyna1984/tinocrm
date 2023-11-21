@@ -52,4 +52,9 @@ public class Cliente {
     @OnDelete(action = OnDeleteAction.CASCADE)
     @JsonProperty(access = JsonProperty.Access.READ_ONLY) // previene la validación innecesaria del Content-Type
     private List<Venta> ventas;
+
+    @Override
+    public String toString() {
+        return "Cliente: " + this.nombreCliente + " " + this.apellidosCliente + " - Doc. Id: " + this.docId;
+    }
 }
