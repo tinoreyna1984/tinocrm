@@ -41,6 +41,20 @@
 			<version>2.15.2</version>
 		</dependency>
 ```
+* Apache POI para reportes:
+```xml
+		<!--Reportes en diversos formatos-->
+        <dependency>
+            <groupId>org.apache.poi</groupId>
+            <artifactId>poi-ooxml</artifactId>
+            <version>5.2.4</version>
+        </dependency>
+        <dependency>
+        <groupId>org.apache.poi</groupId>
+        <artifactId>poi</artifactId>
+        <version>5.2.4</version>
+        </dependency>
+```
 
 ## Login de prueba (par usuario/clave)
 * admin/Tr20010878 (administrador)
