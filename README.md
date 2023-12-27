@@ -65,6 +65,7 @@
 ```bash
 docker-compose up # desde la raíz
 ```
+* También se puede ejecutar con comandos mvn de forma local para probar.
 
 ## Endpoints:
 Definidos en el archivo: TinoCRM - Springboot.postman_collection.json (usarlo con Postman)
