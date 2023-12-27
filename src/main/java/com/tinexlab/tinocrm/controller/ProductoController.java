@@ -3,6 +3,7 @@ package com.tinexlab.tinocrm.controller;
 import com.tinexlab.tinocrm.model.dto.request.ProductoRequest;
 import com.tinexlab.tinocrm.model.repository.ProductoRepository;
 import com.tinexlab.tinocrm.service.ProductoService;
+import io.swagger.v3.oas.annotations.security.SecurityRequirement;
 import jakarta.validation.Valid;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.ResponseEntity;
@@ -12,6 +13,7 @@ import org.springframework.web.bind.annotation.*;
 
 @RestController
 @RequestMapping("/api")
+@SecurityRequirement(name = "bearerAuth")
 public class ProductoController {
 
     @Autowired

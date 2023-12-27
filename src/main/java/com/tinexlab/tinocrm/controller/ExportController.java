@@ -1,6 +1,7 @@
 package com.tinexlab.tinocrm.controller;
 
 import com.tinexlab.tinocrm.service.ExportXLSService;
+import io.swagger.v3.oas.annotations.security.SecurityRequirement;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.HttpHeaders;
 import org.springframework.http.MediaType;
@@ -18,6 +19,7 @@ import java.time.format.DateTimeFormatter;
 
 @RestController
 @RequestMapping("/api/export")
+@SecurityRequirement(name = "bearerAuth")
 public class ExportController {
 
     @Autowired

@@ -1,5 +1,8 @@
 package com.tinexlab.tinocrm;
 
+import io.swagger.v3.oas.annotations.enums.SecuritySchemeIn;
+import io.swagger.v3.oas.annotations.enums.SecuritySchemeType;
+import io.swagger.v3.oas.annotations.security.SecurityScheme;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.boot.CommandLineRunner;
 import org.springframework.boot.SpringApplication;
@@ -8,6 +11,13 @@ import org.springframework.context.annotation.Bean;
 import org.springframework.security.crypto.password.PasswordEncoder;
 
 @SpringBootApplication
+@SecurityScheme(
+		name = "bearerAuth",
+		scheme = "bearer",
+		bearerFormat = "JWT",
+		type = SecuritySchemeType.HTTP,
+		in = SecuritySchemeIn.HEADER
+) // esto es para configurar Swagger con JWT como bearer token
 public class TinocrmApplication {
 
 	public TinocrmApplication() {

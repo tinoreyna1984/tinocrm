@@ -1,6 +1,7 @@
 package com.tinexlab.tinocrm.controller;
 
 import com.tinexlab.tinocrm.service.DashboardService;
+import io.swagger.v3.oas.annotations.security.SecurityRequirement;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.ResponseEntity;
 import org.springframework.security.access.prepost.PreAuthorize;
@@ -10,6 +11,7 @@ import org.springframework.web.bind.annotation.RestController;
 
 @RestController
 @RequestMapping("/api/dashboard")
+@SecurityRequirement(name = "bearerAuth")
 public class DashboardController {
 
     @Autowired

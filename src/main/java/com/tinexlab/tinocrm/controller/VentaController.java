@@ -10,6 +10,7 @@ import com.tinexlab.tinocrm.model.repository.VentaRepository;
 import com.tinexlab.tinocrm.model.entity.User;
 import com.tinexlab.tinocrm.model.repository.UserRepository;
 import com.tinexlab.tinocrm.service.VentaService;
+import io.swagger.v3.oas.annotations.security.SecurityRequirement;
 import jakarta.validation.Valid;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.dao.DataAccessException;
@@ -31,6 +32,7 @@ import java.util.stream.Collectors;
 
 @RestController
 @RequestMapping("/api")
+@SecurityRequirement(name = "bearerAuth")
 public class VentaController {
 
     @Autowired
